@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
             type="search"
             placeholder="Search..."
             onChange={(e) => console.log("Search:", e.target.value)}
-            className="w-full"
+            className="w-full mb-0"
           />
           <div className="w-1/4 flex items-center space-x-6">
             <div onClick={handleNotificationClick} className="relative ">
