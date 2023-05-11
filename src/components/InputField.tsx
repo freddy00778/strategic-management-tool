@@ -149,12 +149,13 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
         );
       } else if (type === "search") {
         return (
-          <div className="relative w-full">
+          <div className="relative w-full ">
             <input
               {...props}
               ref={ref}
               id={id}
               type="text"
+              value={value}
               placeholder={placeholder}
               required={required}
               disabled={disabled}
@@ -165,8 +166,8 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             border-border
             rounded-lg
             w-[500px]
-            py-5 pl-6 pr-10
-            h-full
+            py-5 pl-6 
+            
             text-border
             font-normal
             text-sm
