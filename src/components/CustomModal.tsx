@@ -1,6 +1,5 @@
 // CustomModal.tsx
 import React, { FC, MouseEvent } from "react";
-import cancel from "../assets/images/cancel.svg";
 export type ModalSize = "sm" | "md" | "lg" | "full";
 
 interface CustomModalProps {
@@ -8,6 +7,9 @@ interface CustomModalProps {
   size: ModalSize;
   onClose: () => void;
   children: React.ReactNode;
+  className?: string;
+  cancel?: string;
+  width?: number;
 }
 
 const CustomModal: FC<CustomModalProps> = ({
@@ -15,14 +17,17 @@ const CustomModal: FC<CustomModalProps> = ({
   size,
   onClose,
   children,
+  className,
+  cancel,
+  width,
 }) => {
   if (!isOpen) return null;
 
   const modalSizeClasses = {
     sm: "min-w-[500px] min-h-[300px]",
     md: "min-w-[650px] min-h-[400px]",
-    lg: "min-w-[1500px] min-h-[800px]",
-    full: "w-full h-full m-16",
+    lg: "w-full h-[95%] mx-6  ",
+    full: "w-full h-full ",
   };
 
   const handleClick = (e: MouseEvent) => {
@@ -32,7 +37,7 @@ const CustomModal: FC<CustomModalProps> = ({
 
   return (
     <div
-      className="fixed h-screen inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
+      className={`fixed h-full inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 ${className}`}
       onClick={handleClick}
     >
       <div
@@ -44,7 +49,7 @@ const CustomModal: FC<CustomModalProps> = ({
           className="absolute top-4 right-4 px-6 py-6 text-white"
           onClick={onClose}
         >
-          {/* <img src={cancel} alt="" /> */}
+          <img src={cancel} alt="" width={width} />
           {}
         </button>
       </div>
