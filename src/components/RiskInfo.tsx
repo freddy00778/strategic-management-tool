@@ -11,7 +11,7 @@ const RiskInfo = () => {
           <div key={id}>
             <h1>{topTitle}</h1>
             <div className="flex flex-col justify-start bg-white h-44 w-72 rounded-xl shadow-md mt-10">
-              <div className="border-b py-4 border-b-zinc-100 bg-primary-50 bg-opacity-50 text-primary-500 flex w-full items-center justify-between px-4 text-[14px] rounded-tl-xl rounded-tr-xl">
+              <div className="border-b py-4 border-b-zinc-100  bg-opacity-50  flex w-full items-center justify-between px-4 text-[14px] rounded-tl-xl rounded-tr-xl">
                 <div>{title}</div>
                 <div>{total}</div>
               </div>

@@ -31,6 +31,12 @@ export const RiskData: RiskProps[] = [
         number: 42,
         color: "#FFC700",
       },
+      {
+        id: "5",
+        value: "",
+        number: 179,
+        color: "#FFC700",
+      },
     ],
   },
   {
@@ -62,6 +68,66 @@ export const RiskData: RiskProps[] = [
         value: "Low Impact",
         number: 42,
         color: "#00FF66",
+      },
+      {
+        id: "5",
+        value: "",
+        number: 179,
+        color: "#FFC700",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Top 3 Risks",
+    riskContent: [
+      {
+        id: "1",
+        value: "Risk 1",
+      },
+      {
+        id: "2",
+        value: "Risk 2",
+      },
+      {
+        id: "3",
+        value: "Risk 3",
+      },
+    ],
+  },
+  {
+    id: "4",
+    title: "Top 3 Issues",
+    riskContent: [
+      {
+        id: "1",
+        value: "Issue 1",
+      },
+      {
+        id: "2",
+        value: "Issue 2",
+      },
+      {
+        id: "3",
+        value: "Issue 3",
+      },
+    ],
+  },
+  {
+    id: "5",
+    title: "Last 3 Project Decisions Made",
+    riskContent: [
+      {
+        id: "1",
+        value: "Decision 1",
+      },
+      {
+        id: "2",
+        value: "Decision 2",
+      },
+      {
+        id: "3",
+        value: "Decision 3",
       },
     ],
   },
