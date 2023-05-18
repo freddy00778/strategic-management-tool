@@ -100,6 +100,7 @@ const LessonModalForm: React.FC<LessonModalFormProps> = ({
               placeholder="Describe the lesson"
               required
               className="w-full m-0 h-[320px] "
+              characterLimit={120}
             />
           </div>
         </div>

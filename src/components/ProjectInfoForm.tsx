@@ -195,6 +195,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               placeholder="Describe the main objectives"
               required
               className="w-full mb-2"
+              characterLimit={120}
             />
             <div>
               <DisplayValuesComponent
@@ -255,6 +256,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Provide the necessary information"
+              characterLimit={120}
             />
             <InputField
               id="user-name"
@@ -264,6 +266,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Provide the necessary information"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -282,6 +285,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Provide the necessary information"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -300,6 +304,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Provide the necessary information"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -318,6 +323,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               placeholder="List the activities"
               required
               className="w-full h-[200px] "
+              characterLimit={120}
             />
             <div>
               <DisplayValuesComponent
@@ -360,6 +366,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="The change will impact"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -382,6 +389,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Enter the name of the engineers, accountants and contractors"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -402,6 +410,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Type your answer"
+              characterLimit={120}
             />
           </div>
         </div>
@@ -419,6 +428,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Type in your response"
+              characterLimit={120}
             />
             <InputField
               id="user-name"
@@ -428,6 +438,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Type in your response"
+              characterLimit={120}
             />
             <InputField
               id="user-name"
@@ -437,6 +448,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Type in your response"
+              characterLimit={120}
             />
             <InputField
               id="user-name"
@@ -446,6 +458,7 @@ const ProjectInfoForm: React.FC<ProjectInfoFormProps> = ({ onChange }) => {
               type="textarea"
               className="w-full h-[200px] "
               placeholder="Type in your response"
+              characterLimit={120}
             />
           </div>
         </div>

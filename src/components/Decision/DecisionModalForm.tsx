@@ -103,7 +103,7 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
         <h1 className="text-primary-500 text-[18px]">Add A Decision</h1>
         <div className="space-y-4 w-full">
           <div className="flex w-full h-[80%] space-x-12 items-start justify-between">
-            <div className="flex flex-col w-2/4 h-full space-y-12">
+            <div className="flex flex-col w-2/4 h-full space-y-20">
               <InputField
                 id="email"
                 label="Date1"
@@ -141,7 +141,8 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
                 type="textarea"
                 placeholder="Enter your forum details"
                 required
-                className="w-full m-0 h-[240px] mb-4 "
+                className="w-full m-0 h-[240px]  "
+                characterLimit={120}
               />
               <InputField
                 id="email"
@@ -162,9 +163,10 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
                 placeholder="Enter the comments"
                 required
                 className="w-full m-0 h-[240px] mb-4 "
+                characterLimit={120}
               />
             </div>
-            <div className="flex flex-col w-2/4  space-y-12 mt-6">
+            <div className="flex flex-col w-2/4  space-y-20 mt-6">
               <InputField
                 id="email"
                 label="Decision"
@@ -174,6 +176,7 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
                 placeholder="Describe the decision"
                 required
                 className="w-full m-0 h-[320px] mb-4 "
+                characterLimit={120}
               />
               <InputField
                 id="email"
@@ -203,6 +206,7 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
                 placeholder="Describe the next step"
                 required
                 className="w-full m-0"
+                characterLimit={120}
               />
               <InputField
                 id="email"

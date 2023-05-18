@@ -42,6 +42,7 @@ interface InputFieldProps
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   onEnterPress?: (value: string) => void;
+  characterLimit?: number;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -59,6 +60,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       onChange,
       value,
       onEnterPress,
+      characterLimit,
       ...props
     },
     ref
@@ -68,11 +70,22 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     const [calendarOpen, setCalendarOpen] = useState(false);
     const [date, setDate] = useState<Date | null>(null);
     const datePickerRef = useRef<any>(null);
+    const [remainingChars, setRemainingChars] = useState(characterLimit);
 
     const handleInputChange = (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
+      // Check the character limit
+      if (
+        characterLimit !== undefined &&
+        e.target.value.length > characterLimit
+      ) {
+        return;
+      }
       setInputValue(e.target.value);
+      setRemainingChars(
+        characterLimit ? characterLimit - e.target.value.length : undefined
+      );
       onChange?.(e);
     };
 
@@ -285,26 +298,26 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             disabled={disabled}
             onChange={onChange}
             className={`
-                border
-                border-stroke
-                border-border
-                rounded-xl
-                w-[500px]
-                py-5 px-4
-                h-16
-                text-border
-                font-normal
-                text-sm
-                leading-tight
-                placeholder-placeholder
-                focus:outline-none
-                focus:shadow-outline
-                focus:ring-primary-200
-                focus:border-primary-200
-                focus:border-2
-                ${className}
-                ${error ? "border-red-600" : ""}
-                `}
+                  border
+                  border-stroke
+                  border-border
+                  rounded-xl
+                  w-[500px]
+                  py-5 px-4
+                  h-16
+                  text-border
+                  font-normal
+                  text-sm
+                  leading-tight
+                  placeholder-placeholder
+                  focus:outline-none
+                  focus:shadow-outline
+                  focus:ring-primary-200
+                  focus:border-primary-200
+                  focus:border-2
+                  ${className}
+                  ${error ? "border-red-600" : ""}
+                  `}
           />
         );
       }
@@ -324,6 +337,17 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
         {error && (
           <p className="text-sm text-red-600" id={`${id}-error`}>
             {error}
+          </p>
+        )}
+        {characterLimit && (
+          <p className="text-sm  font-medium text-primary-200">
+            {remainingChars === 0 ? (
+              <p>You have reached your limits</p>
+            ) : (
+              <p className=" text-secondary-500">
+                Remaining characters: ({remainingChars})
+              </p>
+            )}
           </p>
         )}
       </div>
