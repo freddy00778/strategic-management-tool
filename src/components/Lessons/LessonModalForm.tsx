@@ -2,7 +2,8 @@ import InputField from "../InputField";
 import InputDropdown from "../InputDropdown";
 import Button from "../Button";
 import React, { useState } from "react";
-import { DataType } from "../Table";
+
+import { DataType } from "../../../types";
 
 interface LessonModalFormProps {
   category: string;

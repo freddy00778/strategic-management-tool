@@ -4,13 +4,12 @@ import ScopeForm from "../../components/ScopeForm";
 
 const Scope = () => {
   return (
-    <div className="flex flex-col w-full h-full  ">
+    <div className="flex flex-col w-full h-screen  ">
       <Header backgroundImage={avatar} className="h-1/4">
         <h1 className="text-primary-500 text-[28px] font-normal">Scope</h1>
       </Header>
-      <div className="h-3/4">
-        <ScopeForm />
-      </div>
+
+      <ScopeForm />
     </div>
   );
 };

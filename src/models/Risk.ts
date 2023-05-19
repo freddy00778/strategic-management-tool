@@ -3,6 +3,7 @@ export type RiskContent = {
   value: string;
   number?: number;
   color?: string;
+  textColor?: string;
 };
 
 export interface RiskProps {

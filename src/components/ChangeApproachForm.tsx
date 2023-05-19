@@ -1,9 +1,34 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import RadioButton from "./RadioButton";
 import ChangeReadiness from "../assets/images/change-readiness.svg";
+import GearAnalysis from "../assets/images/gear-analysis.svg";
 import InputField from "./InputField";
+import Table from "./Table";
+import AddButton from "./AddButton";
+
+interface DataType {
+  [key: string]: string | number | React.ReactNode;
+}
 
 const ChangeApproachForm = () => {
+  const [data, setData] = useState<DataType[]>([
+    {
+      Title: "Gear Choice",
+      "Strategic Change Planning": 4,
+      "Change Planning": 3,
+      Implementation: 1,
+    },
+    {
+      Title: (
+        <p>
+          Reason for final <br /> choice of gear
+        </p>
+      ),
+      "Strategic Change Planning": <AddButton />,
+      "Change Planning": <AddButton />,
+      Implementation: <AddButton />,
+    },
+  ]);
   const [startUp, setStartUp] = useState("");
   const [implement, setImplement] = useState("");
   const [anchor, setAnchor] = useState("");
@@ -11,8 +36,12 @@ const ChangeApproachForm = () => {
   const [selectedValue1, setSelectedValue1] = useState<string | null>(
     "optionA"
   );
+  const addData = (newData: DataType) => {
+    setData((prevData) => [...prevData, newData]);
+  };
+
   return (
-    <form className="flex flex-col px-16 py-12 overflow-y-auto max-h-[700px]  scrollbar-thin scrollbar-thumb-zinc-200">
+    <form className="flex flex-col px-16 py-12 h-screen overflow-y-auto max-h-[10000px]  scrollbar-thin scrollbar-thumb-zinc-200">
       <h1 className="text-[26px] py-6">What type of change is this?</h1>
       <div className="flex w-full space-x-32">
         <RadioButton
@@ -147,6 +176,25 @@ const ChangeApproachForm = () => {
             />
           </div>
         </form>
+      </div>
+      <div className="py-8">
+        <h1 className="text-[26px] py-6">Start-Up Change Gear Analysis</h1>
+        <div className="w-full mt-4 h-full">
+          <img src={GearAnalysis} alt="" />
+        </div>
+      </div>
+      <div className="py-8">
+        <Table
+          headings={[
+            "Title",
+            "Strategic Change Planning",
+            "Change Planning",
+            "Implementation",
+          ]}
+          data={data}
+          addData={addData}
+          className="h-[500px]"
+        />
       </div>
     </form>
   );

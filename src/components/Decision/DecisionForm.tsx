@@ -4,10 +4,10 @@ import { useState } from "react";
 import lesson from "../../assets/images/lessons-log.svg";
 import cancel from "../../assets/images/cancel.svg";
 import DecisionModal from "./DecisionModal";
-
-interface DataType {
-  [key: string]: string | number;
-}
+import { DataType } from "../../../types";
+// interface DataType {
+//   [key: string]: string | number;
+// }
 
 const DecisionForm = () => {
   const [secondModalOpen, setSecondModalOpen] = useState(false);

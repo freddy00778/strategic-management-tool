@@ -1,8 +1,8 @@
 import React from "react";
-
-export interface DataType {
-  [key: string]: string | number;
-}
+import { DataType } from "../../types";
+// export interface DataType {
+//   [key: string]: string | number | React.ReactNode ;
+// }
 
 export interface TableProps {
   headings: string[];
