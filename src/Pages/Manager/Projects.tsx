@@ -35,7 +35,7 @@ const ManagerProjects = () => {
             Add Project
           </Button>
         </div>
-        <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto scrollbar-none">
+        <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto max-h-[900px]  scrollbar-none">
           <ManagerProjectsComponent />
         </div>
       </div>
