@@ -5,10 +5,7 @@ import { useState } from "react";
 import lesson from "../../assets/images/lessons-log.svg";
 import cancel from "../../assets/images/cancel.svg";
 import LessonModal from "./LessonModal";
-
-interface DataType {
-  [key: string]: string | number;
-}
+import { DataType } from "../../../types";
 
 const LessonsForm = () => {
   const [secondModalOpen, setSecondModalOpen] = useState(false);

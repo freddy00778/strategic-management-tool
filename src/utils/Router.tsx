@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AuthLayout from "../Layouts/Auth/AuthLayout";
 import ProjectDashboardLayout from "../Layouts/Dashboard/ProjectDashboardLayout";
+import ManagerDashboardLayout from "../Layouts/Dashboard/ManagerDashboardLayout";
 import Login from "../Pages/Auth/Login";
 import ResetInstructions from "../Pages/Auth/Instructions";
 import PasswordReset from "../Pages/Auth/PasswordReset";
@@ -18,6 +19,8 @@ import RiskRegister from "../Pages/Project/RiskRegister";
 import IssueRegister from "../Pages/Project/IssueRegister";
 import DecisionRegister from "../Pages/Project/DecisionRegister";
 import Lessons from "../Pages/Project/Lessons";
+import ManagerHome from "../Pages/Manager/Home";
+import ManagerProjects from "../Pages/Manager/Projects";
 
 export const router = createBrowserRouter([
   {
@@ -99,6 +102,20 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/lessons",
         element: <Lessons />,
+      },
+    ],
+  },
+  {
+    path: "/manager/dashboard",
+    element: <ManagerDashboardLayout />,
+    children: [
+      {
+        path: "/manager/dashboard",
+        element: <ManagerHome />,
+      },
+      {
+        path: "/manager/dashboard/projects",
+        element: <ManagerProjects />,
       },
     ],
   },

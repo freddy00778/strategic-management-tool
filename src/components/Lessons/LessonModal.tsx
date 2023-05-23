@@ -1,7 +1,8 @@
 import { FC } from "react";
 import CustomModal from "../CustomModal";
 import LessonModalForm from "./LessonModalForm";
-import { DataType } from "../Table";
+
+import { DataType } from "../../../types";
 
 interface LessonModalProps {
   isOpen: boolean;
