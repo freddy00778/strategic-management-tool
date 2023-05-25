@@ -2,7 +2,7 @@ import InputField from "../InputField";
 
 import Button from "../Button";
 import React from "react";
-import { DataType } from "../Table";
+import { DataType } from "../../../types";
 
 interface LessonModalFormProps {
   date1: string;

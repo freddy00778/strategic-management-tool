@@ -21,7 +21,15 @@ import DecisionRegister from "../Pages/Project/DecisionRegister";
 import Lessons from "../Pages/Project/Lessons";
 import ManagerHome from "../Pages/Manager/Home";
 import ManagerProjects from "../Pages/Manager/Projects";
-
+import ExecutiveDashboardLayout from "../Layouts/Dashboard/ExecutiveDashboardLayout";
+import Calendar from "../Pages/Executive/Calendar";
+import ExecutiveHome from "../Pages/Executive/Home";
+import ExecutiveProjects from "../Pages/Executive/Projects";
+import KeyChangesPage from "../components/keyChanges/AddKeyChange/KeyChangesPage";
+import ObjectivesPage from "../components/keyChanges/ObjectivesPage";
+import StakeholdersPage from "../components/keyChanges/StakeholdersPage";
+import KeyImpactPage from "../components/keyChanges/KeyImpactPage";
+import RiskPage from "../components/keyChanges/RiskPage";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -52,7 +60,7 @@ export const router = createBrowserRouter([
     element: <ProjectDashboardLayout />,
     children: [
       {
-        path: "/project/dashboard",
+        path: "",
         element: <Home />,
       },
       {
@@ -64,11 +72,33 @@ export const router = createBrowserRouter([
         element: <Scope />,
       },
       {
-        path: "/project/dashboard/keychange",
+        path: "/project/dashboard/keychange/",
         element: <KeyChanges />,
+        children: [
+          {
+            path: "/project/dashboard/keychange/objectives",
+            element: <ObjectivesPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/key-impacts",
+            element: <KeyImpactPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/stakeholders",
+            element: <StakeholdersPage />,
+          },
+          {
+            path: "",
+            element: <KeyChangesPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/risks",
+            element: <RiskPage />,
+          },
+        ],
       },
       {
-        path: "/project/dashboard/changeapproach",
+        path: "/project/dashboard/changeapproach/",
         element: <ChangeApproach />,
       },
       {
@@ -106,16 +136,34 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/manager/dashboard",
+    path: "/manager/dashboard/",
     element: <ManagerDashboardLayout />,
     children: [
       {
-        path: "/manager/dashboard",
+        path: "",
         element: <ManagerHome />,
       },
       {
         path: "/manager/dashboard/projects",
         element: <ManagerProjects />,
+      },
+    ],
+  },
+  {
+    path: "/executive/dashboard/",
+    element: <ExecutiveDashboardLayout />,
+    children: [
+      {
+        path: "",
+        element: <ExecutiveHome />,
+      },
+      {
+        path: "/executive/dashboard/projects",
+        element: <ExecutiveProjects />,
+      },
+      {
+        path: "/executive/dashboard/calendar",
+        element: <Calendar />,
       },
     ],
   },
