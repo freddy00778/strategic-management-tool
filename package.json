@@ -36,7 +36,8 @@
     "recharts": "^2.6.2",
     "redux-persist": "^6.0.0",
     "sort-by": "^1.2.0",
-    "tailwind-scrollbar": "^3.0.0"
+    "tailwind-scrollbar": "^3.0.0",
+    "victory": "^36.6.10"
   },
   "devDependencies": {
     "@types/plotly.js": "^2.12.18",

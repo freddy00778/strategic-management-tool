@@ -25,7 +25,7 @@ const ExecutiveHome = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto scrollbar-none">
+        <div className="grid grid-rows-auto gap-y-10 h-full w-full overflow-y-auto scrollbar-none">
           <ExecutiveDashboard />
           {/* You can add more components here and they will take up equal space and scroll if needed */}
         </div>
