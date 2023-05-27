@@ -15,7 +15,7 @@ export interface TableProps {
 const Table: React.FC<TableProps> = ({
   headings,
   data,
-  addData,
+  //addData,
   className,
   children,
 }) => {

@@ -39,7 +39,7 @@ const LessonsForm = () => {
           <Table
             headings={["No", "Type", "Description", "Date Logged", "Logged By"]}
             data={data}
-            addData={addData}
+            //addData={addData}
             children={
               <div className=" space-y-2">
                 <img src={lesson} alt="lessons" width={200} />
