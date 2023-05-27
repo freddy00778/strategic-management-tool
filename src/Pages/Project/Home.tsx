@@ -2,6 +2,8 @@ import Header from "../../components/Header";
 import avatar from "../../assets/images/avatar.jpg";
 import ProjectDashboard from "../../components/ProjectDashboard";
 import RiskInfo from "../../components/RiskInfo";
+import KeyChangeInfo from "../../components/KeyChangeInfo";
+import BehaviorChangeInfo from "../../components/BehaviorChangeInfo";
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
         <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto scrollbar-none">
           <ProjectDashboard />
           <RiskInfo />
+          <KeyChangeInfo />
+          <BehaviorChangeInfo />
           {/* You can add more components here and they will take up equal space and scroll if needed */}
         </div>
       </div>

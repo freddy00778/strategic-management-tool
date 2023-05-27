@@ -71,6 +71,22 @@ const ChangeApproachForm = () => {
           <RadioButton
             content={
               <ul className="flex flex-col space-y-3 mt-2">
+                <li>Sense</li>
+                <li>Categorize</li>
+                <li>Response</li>
+                <li className="text-[#01A386] font-medium">Best Practice</li>
+              </ul>
+            }
+            title="Simple"
+            name="walletAmount"
+            value="optionD"
+            selected={selectedValue1 === "optionD"}
+            onChange={(value) => setSelectedValue1(value)}
+            className="flex w-full"
+          />
+          <RadioButton
+            content={
+              <ul className="flex flex-col space-y-3 mt-2">
                 <li>Probe</li>
                 <li>Sense</li>
                 <li>Response</li>
@@ -113,22 +129,6 @@ const ChangeApproachForm = () => {
             name="walletAmount"
             value="optionC"
             selected={selectedValue1 === "optionC"}
-            onChange={(value) => setSelectedValue1(value)}
-            className="flex w-full"
-          />
-          <RadioButton
-            content={
-              <ul className="flex flex-col space-y-3 mt-2">
-                <li>Sense</li>
-                <li>Categorize</li>
-                <li>Response</li>
-                <li className="text-[#01A386] font-medium">Best Practice</li>
-              </ul>
-            }
-            title="Simple"
-            name="walletAmount"
-            value="optionD"
-            selected={selectedValue1 === "optionD"}
             onChange={(value) => setSelectedValue1(value)}
             className="flex w-full"
           />

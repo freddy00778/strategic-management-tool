@@ -6,7 +6,7 @@ const RiskInfo = () => {
       <div className="flex items-center border-b border-b-zinc-100  h-12">
         Risks, Issues & Decisions
       </div>
-      <div className="flex w-full h-full py-6 flex-wrap items-start justify-between px-8">
+      <div className="flex w-full h-full py-6 flex-wrap gap-20 items-start justify-between px-8">
         {RiskData.map(({ id, topTitle, title, riskContent, total }) => (
           <div key={id}>
             <h1 className="text-[20px] font-medium">{topTitle}</h1>
@@ -32,6 +32,10 @@ const RiskInfo = () => {
             </div>
           </div>
         ))}
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
