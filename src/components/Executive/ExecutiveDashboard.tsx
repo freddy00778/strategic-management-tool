@@ -6,13 +6,13 @@ const ExecutiveDashboard = () => {
     <div className="flex flex-col w-full">
       <div className="flex w-full">
         <div className="flex flex-wrap gap-20">
-          {ChangeActivityData.map(({ id, topTitle, acitvity }) => (
+          {ChangeActivityData.map(({ id, topTitle, activity }) => (
             <div key={id} className="flex flex-col space-y-6">
               <h1 className=" text-xl">{topTitle}</h1>
               <div className="flex  w-full ">
                 <div className="flex w-full   ">
                   <div className="flex w-full space-x-6 ">
-                    {acitvity.map(({ id, title, data }) => {
+                    {activity.map(({ id, title, data }) => {
                       const chartData = data.datasets[0].data.map(
                         (item, index) => ({
                           x: data.labels[index],

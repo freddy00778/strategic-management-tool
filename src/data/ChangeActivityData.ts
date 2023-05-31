@@ -4,7 +4,7 @@ export const ChangeActivityData: ChangeActivityProps[] = [
   {
     id: 1,
     topTitle: "Number of Projects per Level of Change Activity",
-    acitvity: [
+    activity: [
       {
         id: 1,
         title: "Strategic Change ",

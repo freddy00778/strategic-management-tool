@@ -1,7 +1,7 @@
 export interface ChangeActivityProps {
   id: number;
   topTitle: string;
-  acitvity: ActivityType[];
+  activity: ActivityType[];
 }
 
 export type ActivityType = {
