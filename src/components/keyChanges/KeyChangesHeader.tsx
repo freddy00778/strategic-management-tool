@@ -26,7 +26,7 @@ import { KeyChangesLinksData } from "../../data/KeyChangesLinksData";
 
 const KeyChangesHeader: React.FC = () => {
   return (
-    <div className="flex items-center  py-6 border-b border-b-border border-opacity-20">
+    <div className="flex items-center h-full py-6 border-b border-b-border border-opacity-20">
       <div className="flex space-x-12 px-8">
         {KeyChangesLinksData.map(({ id, title, route }) => (
           <KeyChangesLink key={id} route={route} title={title} />

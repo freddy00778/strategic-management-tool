@@ -41,7 +41,7 @@ const KeyChangeModal: FC<KeyChangeModalProps> = ({
       isOpen={isOpen}
       size="lg"
       onClose={onClose}
-      className={` ${className}`}
+      className={` w-full h-full ${className}`}
       cancel={cancel}
       width={width}
     >

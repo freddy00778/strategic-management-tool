@@ -1,11 +1,14 @@
 import Button from "../../Button";
+import InputDropdown from "../../InputDropdown";
 import { useState } from "react";
-
-import kc from "../../../assets/images/keyChange.svg";
-import AddKeyChangeForm from "./AddKeyChangeForm";
 import { DataType } from "../../../../types";
+import risk from "../../../assets/images/riskFlag.svg";
+import AddRiskForm from "../AddRiskForm";
 
-const KeyChangesPage = () => {
+const RiskTwo = () => {
+  const options1 = ["Select", "Key Change 1"];
+
+  const [selectedOption1, setSelectedOption1] = useState(options1[0]);
   const [secondModalOpen, setSecondModalOpen] = useState(false);
   const [dataEntries, setDataEntries] = useState<DataType[]>([]); // Array to store all entries
 
@@ -20,37 +23,45 @@ const KeyChangesPage = () => {
   const openModal = () => {
     setSecondModalOpen(true);
   };
-
+  const handleOptionSelected1 = (option1: string) => {
+    setSelectedOption1(option1);
+  };
   return (
-    <div className="px-7 flex flex-col w-full h-full space-y-4 relative">
-      <div className="flex h-1/4 items-center justify-between">
+    <div className="relative  h-full">
+      <div className="flex h-1/4 items-center justify-between p-6">
         <Button
           variant="primary"
-          size="lg"
+          size="md"
           onClick={openModal}
-          className="rounded-lg w-[30%]"
+          className="rounded-lg w-[25%]"
           type="button"
         >
-          Add Key Change
+          Add Risk
         </Button>
+        <InputDropdown
+          id="dropdown"
+          label={`${selectedOption1}`}
+          options={options1}
+          onOptionSelected={handleOptionSelected1}
+          className=" w-[200px] m-0"
+        />
         <div className="flex items-center space-x-4">
           <h1 className="text-[#000] font-semibold text-[18px]">
-            Number of Key Changes
+            Number of Risks
           </h1>
           <div className="flex items-center justify-center px-4 py-2 border border-border rounded-xl">
             {dataEntries.length}
           </div>
         </div>
       </div>
-      <div className="flex flex-col ">
+      <div className="px-6 flex flex-col ">
         {dataEntries.length === 0 && !secondModalOpen ? (
-          // If there are no entries and the modal is not open, display "No Key Change"
-          <div className="flex flex-col items-center justify-center space-y-2 ">
-            <img src={kc} alt="" />
-            <h1 className="text-[20px]">No Key Change</h1>
+          <div className="flex flex-col items-center justify-center">
+            <img src={risk} alt="" />
+            <h1>No Risk</h1>
           </div>
         ) : null}
-        <AddKeyChangeForm
+        <AddRiskForm
           isOpen={secondModalOpen}
           onClose={onClose}
           addData={handleSave}
@@ -60,4 +71,4 @@ const KeyChangesPage = () => {
   );
 };
 
-export default KeyChangesPage;
+export default RiskTwo;

@@ -30,6 +30,15 @@ import ObjectivesPage from "../components/keyChanges/ObjectivesPage";
 import StakeholdersPage from "../components/keyChanges/StakeholdersPage";
 import KeyImpactPage from "../components/keyChanges/KeyImpactPage";
 import RiskPage from "../components/keyChanges/RiskPage";
+import RiskOne from "../components/RiskRegister/RiskPerKeyChange/RiskOne";
+import RiskTwo from "../components/RiskRegister/RiskPerKeyChange/RiskTwo";
+import RiskThree from "../components/RiskRegister/RiskPerKeyChange/RiskThree";
+import RiskFour from "../components/RiskRegister/RiskPerKeyChange/RiskFour";
+import RiskFive from "../components/RiskRegister/RiskPerKeyChange/RiskFive";
+import RiskSix from "../components/RiskRegister/RiskPerKeyChange/RiskSix";
+import RiskSeven from "../components/RiskRegister/RiskPerKeyChange/RiskSeven";
+import RiskEight from "../components/RiskRegister/RiskPerKeyChange/RiskEight";
+import RiskNine from "../components/RiskRegister/RiskPerKeyChange/RiskNine";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -120,6 +129,44 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/riskregister",
         element: <RiskRegister />,
+        children: [
+          {
+            path: "",
+            element: <RiskOne />,
+          },
+          {
+            path: "/project/dashboard/riskregister/two",
+            element: <RiskTwo />,
+          },
+          {
+            path: "/project/dashboard/riskregister/three",
+            element: <RiskThree />,
+          },
+          {
+            path: "/project/dashboard/riskregister/four",
+            element: <RiskFour />,
+          },
+          {
+            path: "/project/dashboard/riskregister/five",
+            element: <RiskFive />,
+          },
+          {
+            path: "/project/dashboard/riskregister/six",
+            element: <RiskSix />,
+          },
+          {
+            path: "/project/dashboard/riskregister/seven",
+            element: <RiskSeven />,
+          },
+          {
+            path: "/project/dashboard/riskregister/eight",
+            element: <RiskEight />,
+          },
+          {
+            path: "/project/dashboard/riskregister/nine",
+            element: <RiskNine />,
+          },
+        ],
       },
       {
         path: "/project/dashboard/issueregister",

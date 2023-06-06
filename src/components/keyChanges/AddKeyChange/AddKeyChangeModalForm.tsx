@@ -37,8 +37,8 @@ const AddKeyChangeModalForm: React.FC<AddKeyChangeFormProps> = ({
     onClose();
   };
   return (
-    <div className="flex flex-col space-y-6">
-      <div>
+    <div className="flex flex-col space-y-16 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200">
+      <div className="flex space-x-10">
         <InputField
           id="change"
           label="Key Change Title"
@@ -60,18 +60,21 @@ const AddKeyChangeModalForm: React.FC<AddKeyChangeFormProps> = ({
           className="w-full m-0"
         />
       </div>
-      <div className="flex flex-col w-full px-20 py-10 space-y-16  ">
-        <div className="w-full flex items-center border-b border-b-border py-4">
+      <div className="flex flex-col w-full  space-y-10  ">
+        <div className="w-full flex items-center border-b border-b-border ">
           <h1 className="text-[22px] text-black">
-            Only complete this if relevant- What would you like to say to manage
-            these expectations?
+            As-Is (Example questions to determine As-Is)
           </h1>
         </div>
-        <h1>
-          Complete the sentence “ With regards to we would like to ...(i.e.
-          confirm that ... OR point out that ... Mention that ... )
-        </h1>
-        <div className="flex flex-col w-full space-y-24">
+        <div className="flex flex-wrap gap-6">
+          <span>How is it currently being done?</span>
+          <span>What does it currently look like?</span>
+          <span>Who is currently doing it?</span>
+          <span>What system are we currently using?</span>
+          <span>How long does it currently take to do?</span>
+        </div>
+
+        <div className="flex flex-col w-full ">
           <InputField
             id="user-name"
             //   label="We will be relying on .... to assist us with the implementing the change successfully"
@@ -84,18 +87,20 @@ const AddKeyChangeModalForm: React.FC<AddKeyChangeFormProps> = ({
           />
         </div>
       </div>
-      <div className="flex flex-col w-full px-20 py-10 space-y-16  ">
-        <div className="w-full flex items-center border-b border-b-border py-4">
+      <div className="flex flex-col w-full space-y-10 pt-6  ">
+        <div className="w-full flex items-center border-b border-b-border py-2 ">
           <h1 className="text-[22px] text-black">
-            Only complete this if relevant- What would you like to say to manage
-            these expectations?
+            To-Be (Example questions to determine To-Be)
           </h1>
         </div>
-        <h1>
-          Complete the sentence “ With regards to we would like to ...(i.e.
-          confirm that ... OR point out that ... Mention that ... )
-        </h1>
-        <div className="flex flex-col w-full space-y-24">
+        <div className="flex flex-wrap gap-6">
+          <span>How will it be done in the future?</span>
+          <span>How it will look like in the future?</span>
+          <span>Who will do it in the future?</span>
+          <span>What system/equipment will we use in the future?</span>
+          <span>How long will it take in the future?</span>
+        </div>
+        <div className="flex flex-col w-full ">
           <InputField
             id="user-name"
             //   label="We will be relying on .... to assist us with the implementing the change successfully"
