@@ -1,14 +1,10 @@
 import Button from "../../Button";
-import InputDropdown from "../../InputDropdown";
 import { useState } from "react";
 import { DataType } from "../../../../types";
 import risk from "../../../assets/images/riskFlag.svg";
-import AddRiskForm from "../AddRiskForm";
+import IssueForm from "../IssueForm";
 
-const RiskTwo = () => {
-  const options1 = ["Select", "Key Change 1"];
-
-  const [selectedOption1, setSelectedOption1] = useState(options1[0]);
+const IssueOne = () => {
   const [secondModalOpen, setSecondModalOpen] = useState(false);
   const [dataEntries, setDataEntries] = useState<DataType[]>([]); // Array to store all entries
 
@@ -23,9 +19,6 @@ const RiskTwo = () => {
   const openModal = () => {
     setSecondModalOpen(true);
   };
-  const handleOptionSelected1 = (option1: string) => {
-    setSelectedOption1(option1);
-  };
   return (
     <div className="relative  h-full">
       <div className="flex h-1/4 items-center justify-between p-6">
@@ -36,18 +29,11 @@ const RiskTwo = () => {
           className="rounded-lg w-[25%]"
           type="button"
         >
-          Add Risk
+          Add Issue
         </Button>
-        <InputDropdown
-          id="dropdown"
-          label={`${selectedOption1}`}
-          options={options1}
-          onOptionSelected={handleOptionSelected1}
-          className=" w-[180px] m-0"
-        />
         <div className="flex items-center space-x-4">
           <h1 className="text-[#000] font-semibold text-[18px]">
-            Number of Risks
+            Number of Issues
           </h1>
           <div className="flex items-center justify-center px-4 py-2 border border-border rounded-xl">
             {dataEntries.length}
@@ -58,10 +44,10 @@ const RiskTwo = () => {
         {dataEntries.length === 0 && !secondModalOpen ? (
           <div className="flex flex-col items-center justify-center">
             <img src={risk} alt="" />
-            <h1>No Risk</h1>
+            <h1>No Issues</h1>
           </div>
         ) : null}
-        <AddRiskForm
+        <IssueForm
           isOpen={secondModalOpen}
           onClose={onClose}
           addData={handleSave}
@@ -71,4 +57,4 @@ const RiskTwo = () => {
   );
 };
 
-export default RiskTwo;
+export default IssueOne;

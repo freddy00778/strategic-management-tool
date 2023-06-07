@@ -39,6 +39,11 @@ import RiskSix from "../components/RiskRegister/RiskPerKeyChange/RiskSix";
 import RiskSeven from "../components/RiskRegister/RiskPerKeyChange/RiskSeven";
 import RiskEight from "../components/RiskRegister/RiskPerKeyChange/RiskEight";
 import RiskNine from "../components/RiskRegister/RiskPerKeyChange/RiskNine";
+import IssueOne from "../components/IssueRegister/IssuePerKeyChange/IssueOne";
+import IssueTwo from "../components/IssueRegister/IssuePerKeyChange/IssueTwo";
+import IssueThree from "../components/IssueRegister/IssuePerKeyChange/IssueThree";
+import IssueFour from "../components/IssueRegister/IssuePerKeyChange/IssueFour";
+import IssueFive from "../components/IssueRegister/IssuePerKeyChange/IssueFive";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -171,6 +176,28 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/issueregister",
         element: <IssueRegister />,
+        children: [
+          {
+            path: "",
+            element: <IssueOne />,
+          },
+          {
+            path: "/project/dashboard/issueregister/two",
+            element: <IssueTwo />,
+          },
+          {
+            path: "/project/dashboard/issueregister/three",
+            element: <IssueThree />,
+          },
+          {
+            path: "/project/dashboard/issueregister/four",
+            element: <IssueFour />,
+          },
+          {
+            path: "/project/dashboard/issueregister/five",
+            element: <IssueFive />,
+          },
+        ],
       },
       {
         path: "/project/dashboard/decisionregister",

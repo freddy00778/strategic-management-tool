@@ -4,7 +4,7 @@ import Button from "../Button";
 import { DataType } from "../../../types";
 import { useState } from "react";
 
-interface AddKeyChangeFormProps {
+interface IssueModalFormProps {
   risk: string;
   setRisk: React.Dispatch<React.SetStateAction<string>>;
   owner: string;
@@ -22,7 +22,7 @@ interface AddKeyChangeFormProps {
   addData: (newData: DataType) => void;
   onClose: () => void;
 }
-const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
+const IssueModalForm: React.FC<IssueModalFormProps> = ({
   risk,
   setRisk,
   owner,
@@ -209,4 +209,4 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   );
 };
 
-export default AddRiskModalForm;
+export default IssueModalForm;
