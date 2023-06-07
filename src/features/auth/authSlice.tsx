@@ -28,12 +28,12 @@ const initialState: AuthState = {
 const loginUser = async ({ email, password }: Credentials): Promise<User> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (email === "kwame@changeverve.com" && password === "password") {
+      if (email === "kwame.com" && password === "pass") {
         resolve({
           id: 1,
           name: "Kwame",
-          email: "kwame@changeverve.com",
-          password: "password",
+          email: "kwame.com",
+          password: "pass",
         });
       } else {
         reject({ message: "Invalid email or password" });
