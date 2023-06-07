@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import IssueKeyChangeList from "./IssueKeyChangeList";
+import KeyChangeList from "../keyChanges/KeyChangeList";
+import { IssueKeyChangeListData } from "../../data/IssueKeyChangeListData";
 const IssueRegisterLayout = () => {
   return (
     <div className=" w-full h-full space-y-6">
@@ -15,7 +16,7 @@ const IssueRegisterLayout = () => {
         </div>
         <div className="flex h-[84%] w-full">
           <div className="w-1/4 border-r border-border border-opacity-20">
-            <IssueKeyChangeList />
+            <KeyChangeList data={IssueKeyChangeListData} text="Key" />
           </div>
           <div className="w-3/4">
             <Outlet />

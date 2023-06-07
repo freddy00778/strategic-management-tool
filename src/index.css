@@ -58,6 +58,16 @@
     @apply opacity-50 cursor-not-allowed;
   }
 }
+.tab-selected::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #1d4ed8; /* Replace this with the color you want */
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+}
 
 /* .scrollbar {
   @apply scrollbar;

@@ -28,7 +28,7 @@ const KeyChangesPage = () => {
           variant="primary"
           size="lg"
           onClick={openModal}
-          className="rounded-lg w-[30%]"
+          className="rounded-lg w-[30%] bg-primary-500"
           type="button"
         >
           Add Key Change

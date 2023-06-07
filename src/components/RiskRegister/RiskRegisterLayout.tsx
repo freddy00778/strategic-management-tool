@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import KeyChangeList from "./KeyChangeList";
+import KeyChangeList from "../keyChanges/KeyChangeList";
+import { KeyChangeListData } from "../../data/KeyChangeListData";
 const RiskRegisterLayout = () => {
   return (
     <div className=" w-full h-full space-y-6">
@@ -13,7 +14,7 @@ const RiskRegisterLayout = () => {
         </div>
         <div className="flex h-[84%] w-full">
           <div className="w-1/4 border-r border-border border-opacity-20">
-            <KeyChangeList />
+            <KeyChangeList data={KeyChangeListData} />
           </div>
           <div className="w-3/4">
             <Outlet />

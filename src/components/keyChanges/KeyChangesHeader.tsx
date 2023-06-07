@@ -1,38 +1,60 @@
-import { NavLink, useMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { NavLinksProps } from "../../models/NavLinks";
+import * as Tabs from "@radix-ui/react-tabs";
+import "tailwindcss/tailwind.css";
+import { useState } from "react";
 
 interface KeyChangesLinkProps {
-  route: string;
+  id: string;
   title: string;
+  route: string;
+  activeTab: string;
+  setActiveTab: (id: string) => void;
 }
 
-const KeyChangesLink: React.FC<KeyChangesLinkProps> = ({ route, title }) => {
-  const activeStyle = {
-    borderBottom: "3px solid rgba(199, 80, 0)",
-  };
-  const match = useMatch(route);
+interface TabComponentProps {
+  routes: NavLinksProps[];
+}
 
+const KeyChangesLink: React.FC<KeyChangesLinkProps> = ({
+  id,
+  title,
+  route,
+  activeTab,
+  setActiveTab,
+}) => {
+  const selectedClass = activeTab === id ? "border-b-2 border-primary-500" : "";
   return (
-    <ul>
-      <li>
-        <NavLink to={route} style={match ? activeStyle : undefined}>
-          {title}
-        </NavLink>
-      </li>
-    </ul>
+    <Tabs.Trigger
+      value={id}
+      className={`mx-2 ${selectedClass}`}
+      onClick={() => setActiveTab(id)}
+    >
+      <NavLink to={route}>{title}</NavLink>
+    </Tabs.Trigger>
   );
 };
 
-import { KeyChangesLinksData } from "../../data/KeyChangesLinksData";
-
-const KeyChangesHeader: React.FC = () => {
+const KeyChangesHeader: React.FC<TabComponentProps> = ({ routes }) => {
+  const [activeTab, setActiveTab] = useState(routes[0]?.id);
   return (
-    <div className="flex items-center h-full py-6 border-b border-b-border border-opacity-20">
-      <div className="flex space-x-12 px-8">
-        {KeyChangesLinksData.map(({ id, title, route }) => (
-          <KeyChangesLink key={id} route={route} title={title} />
+    <Tabs.Root
+      defaultValue={activeTab}
+      className="flex items-center h-full py-6 border-b border-b-border border-opacity-20"
+    >
+      <Tabs.List className="flex p-4  space-x-12 px-8">
+        {routes.map(({ id, title, route }) => (
+          <KeyChangesLink
+            key={id}
+            id={id}
+            route={route}
+            title={title}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         ))}
-      </div>
-    </div>
+      </Tabs.List>
+    </Tabs.Root>
   );
 };
 

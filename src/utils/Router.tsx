@@ -86,7 +86,7 @@ export const router = createBrowserRouter([
         element: <Scope />,
       },
       {
-        path: "/project/dashboard/keychange/",
+        path: "/project/dashboard/keychange",
         element: <KeyChanges />,
         children: [
           {
