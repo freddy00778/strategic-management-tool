@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AuthLayout from "../Layouts/Auth/AuthLayout";
 import ProjectDashboardLayout from "../Layouts/Dashboard/ProjectDashboardLayout";
+import ManagerDashboardLayout from "../Layouts/Dashboard/ManagerDashboardLayout";
 import Login from "../Pages/Auth/Login";
 import ResetInstructions from "../Pages/Auth/Instructions";
 import PasswordReset from "../Pages/Auth/PasswordReset";
@@ -18,7 +19,31 @@ import RiskRegister from "../Pages/Project/RiskRegister";
 import IssueRegister from "../Pages/Project/IssueRegister";
 import DecisionRegister from "../Pages/Project/DecisionRegister";
 import Lessons from "../Pages/Project/Lessons";
-
+import ManagerHome from "../Pages/Manager/Home";
+import ManagerProjects from "../Pages/Manager/Projects";
+import ExecutiveDashboardLayout from "../Layouts/Dashboard/ExecutiveDashboardLayout";
+import Calendar from "../Pages/Executive/Calendar";
+import ExecutiveHome from "../Pages/Executive/Home";
+import ExecutiveProjects from "../Pages/Executive/Projects";
+import KeyChangesPage from "../components/keyChanges/AddKeyChange/KeyChangesPage";
+import ObjectivesPage from "../components/keyChanges/ObjectivesPage";
+import StakeholdersPage from "../components/keyChanges/StakeholdersPage";
+import KeyImpactPage from "../components/keyChanges/KeyImpactPage";
+import RiskPage from "../components/keyChanges/RiskPage";
+import RiskOne from "../components/RiskRegister/RiskPerKeyChange/RiskOne";
+import RiskTwo from "../components/RiskRegister/RiskPerKeyChange/RiskTwo";
+import RiskThree from "../components/RiskRegister/RiskPerKeyChange/RiskThree";
+import RiskFour from "../components/RiskRegister/RiskPerKeyChange/RiskFour";
+import RiskFive from "../components/RiskRegister/RiskPerKeyChange/RiskFive";
+import RiskSix from "../components/RiskRegister/RiskPerKeyChange/RiskSix";
+import RiskSeven from "../components/RiskRegister/RiskPerKeyChange/RiskSeven";
+import RiskEight from "../components/RiskRegister/RiskPerKeyChange/RiskEight";
+import RiskNine from "../components/RiskRegister/RiskPerKeyChange/RiskNine";
+import IssueOne from "../components/IssueRegister/IssuePerKeyChange/IssueOne";
+import IssueTwo from "../components/IssueRegister/IssuePerKeyChange/IssueTwo";
+import IssueThree from "../components/IssueRegister/IssuePerKeyChange/IssueThree";
+import IssueFour from "../components/IssueRegister/IssuePerKeyChange/IssueFour";
+import IssueFive from "../components/IssueRegister/IssuePerKeyChange/IssueFive";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -49,7 +74,7 @@ export const router = createBrowserRouter([
     element: <ProjectDashboardLayout />,
     children: [
       {
-        path: "/project/dashboard",
+        path: "",
         element: <Home />,
       },
       {
@@ -61,11 +86,33 @@ export const router = createBrowserRouter([
         element: <Scope />,
       },
       {
-        path: "/project/dashboard/keychange",
+        path: "/project/dashboard/keychange/",
         element: <KeyChanges />,
+        children: [
+          {
+            path: "/project/dashboard/keychange/objectives",
+            element: <ObjectivesPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/key-impacts",
+            element: <KeyImpactPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/stakeholders",
+            element: <StakeholdersPage />,
+          },
+          {
+            path: "",
+            element: <KeyChangesPage />,
+          },
+          {
+            path: "/project/dashboard/keychange/risks",
+            element: <RiskPage />,
+          },
+        ],
       },
       {
-        path: "/project/dashboard/changeapproach",
+        path: "/project/dashboard/changeapproach/",
         element: <ChangeApproach />,
       },
       {
@@ -87,10 +134,70 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/riskregister",
         element: <RiskRegister />,
+        children: [
+          {
+            path: "",
+            element: <RiskOne />,
+          },
+          {
+            path: "/project/dashboard/riskregister/two",
+            element: <RiskTwo />,
+          },
+          {
+            path: "/project/dashboard/riskregister/three",
+            element: <RiskThree />,
+          },
+          {
+            path: "/project/dashboard/riskregister/four",
+            element: <RiskFour />,
+          },
+          {
+            path: "/project/dashboard/riskregister/five",
+            element: <RiskFive />,
+          },
+          {
+            path: "/project/dashboard/riskregister/six",
+            element: <RiskSix />,
+          },
+          {
+            path: "/project/dashboard/riskregister/seven",
+            element: <RiskSeven />,
+          },
+          {
+            path: "/project/dashboard/riskregister/eight",
+            element: <RiskEight />,
+          },
+          {
+            path: "/project/dashboard/riskregister/nine",
+            element: <RiskNine />,
+          },
+        ],
       },
       {
         path: "/project/dashboard/issueregister",
         element: <IssueRegister />,
+        children: [
+          {
+            path: "",
+            element: <IssueOne />,
+          },
+          {
+            path: "/project/dashboard/issueregister/two",
+            element: <IssueTwo />,
+          },
+          {
+            path: "/project/dashboard/issueregister/three",
+            element: <IssueThree />,
+          },
+          {
+            path: "/project/dashboard/issueregister/four",
+            element: <IssueFour />,
+          },
+          {
+            path: "/project/dashboard/issueregister/five",
+            element: <IssueFive />,
+          },
+        ],
       },
       {
         path: "/project/dashboard/decisionregister",
@@ -99,6 +206,38 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/lessons",
         element: <Lessons />,
+      },
+    ],
+  },
+  {
+    path: "/manager/dashboard/",
+    element: <ManagerDashboardLayout />,
+    children: [
+      {
+        path: "",
+        element: <ManagerHome />,
+      },
+      {
+        path: "/manager/dashboard/projects",
+        element: <ManagerProjects />,
+      },
+    ],
+  },
+  {
+    path: "/executive/dashboard/",
+    element: <ExecutiveDashboardLayout />,
+    children: [
+      {
+        path: "",
+        element: <ExecutiveHome />,
+      },
+      {
+        path: "/executive/dashboard/projects",
+        element: <ExecutiveProjects />,
+      },
+      {
+        path: "/executive/dashboard/calendar",
+        element: <Calendar />,
       },
     ],
   },

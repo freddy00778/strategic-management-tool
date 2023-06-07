@@ -2,7 +2,7 @@ import { ProjectData } from "../data/ProjectData";
 
 const ProjectDashboard = () => {
   return (
-    <div className="flex flex-col w-full h-3/4  ">
+    <div className="flex flex-col w-full h-full">
       <div className="flex items-center border-b border-b-zinc-100  h-12">
         Project Information
       </div>

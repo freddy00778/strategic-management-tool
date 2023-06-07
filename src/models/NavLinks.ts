@@ -1,6 +1,6 @@
 export interface NavLinksProps {
   id: string;
   title: string;
-  image: string;
+  image?: string;
   route: string;
 }

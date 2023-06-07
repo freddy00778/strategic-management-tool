@@ -15,28 +15,31 @@ const Header: React.FC<HeaderProps> = ({
   backgroundImage,
 }) => {
   const [counter, setCounter] = useState(0);
+  const [search, setSearch] = useState("");
 
   // function counter
   const handleNotificationClick = () => {
     setCounter(counter + 1);
   };
   return (
-    <div className="w-full flex h-[100px] items-center border-b border-b-zinc-100">
+    <div className="w-full flex h-[140px] items-center border-b border-b-zinc-100">
       <div className="flex w-full items-center px-7">
         <div
           className={`flex space-x-2  w-2/4 font-medium text-[18px] ${className}`}
         >
           {children}
         </div>
-        <div className="w-2/4 flex items-center justify-between space-x-8">
+        <div className="w-2/4 flex h-full items-center justify-between  ">
           <InputField
             id="search"
             type="search"
             placeholder="Search..."
-            onChange={(e) => console.log("Search:", e.target.value)}
-            className="w-full"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full "
           />
-          <div className="w-1/4 flex items-center space-x-6">
+
+          <div className="w-[40%] flex items-center justify-center space-x-6">
             <div onClick={handleNotificationClick} className="relative ">
               <img src={notification} alt="" className="inline-block" />
               <div className="absolute top-[-4px] right-[-5px] bg-[#EF8B89] flex items-center justify-center rounded-full w-[15px] h-[15px] text-white text-[10px]">

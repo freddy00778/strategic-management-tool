@@ -1,8 +1,8 @@
 import React from "react";
-
+import ClipLoader from "react-spinners/ClipLoader";
 interface Props {
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   variant?: string; // default, primary, info, success, warning, danger, dark
   size?: string; // sm, md, lg
   disabled?: boolean;
@@ -29,7 +29,7 @@ const Button: React.FC<Props> = ({
       type={type}
       {...rest}
     >
-      {children}
+      {disabled ? <ClipLoader size={20} color="#fffff" /> : children}
     </button>
   );
 };
