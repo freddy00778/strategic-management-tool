@@ -140,7 +140,7 @@ const LoginForm = () => {
             variant="primary"
             size="lg"
             onClick={handleLogin}
-            className="rounded-lg w-full"
+            className="rounded-lg w-full bg-primary-500"
             type="button"
             disabled={authState.isLoading}
           >

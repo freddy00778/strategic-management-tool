@@ -44,7 +44,12 @@ import IssueTwo from "../components/IssueRegister/IssuePerKeyChange/IssueTwo";
 import IssueThree from "../components/IssueRegister/IssuePerKeyChange/IssueThree";
 import IssueFour from "../components/IssueRegister/IssuePerKeyChange/IssueFour";
 import IssueFive from "../components/IssueRegister/IssuePerKeyChange/IssueFive";
-import ObjectiveForm from "../components/keyChanges/Objectives.tsx/ObjectiveForm";
+import ObjectiveForm from "../components/keyChanges/KeyChangeForms/ObjectiveForm";
+import StakeholderForm from "../components/keyChanges/KeyChangeForms/StakeholderForm";
+import RiskImpactForm from "../components/keyChanges/KeyChangeForms/RiskImpactForm";
+import KeyImpactForm from "../components/keyChanges/KeyChangeForms/KeyImpactForm";
+import PriorityPage from "../components/keyChanges/PriorityPage";
+import PriorityForm from "../components/keyChanges/KeyChangeForms/PriorityForm";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -135,18 +140,174 @@ export const router = createBrowserRouter([
           {
             path: "/project/dashboard/keychange/key-impacts",
             element: <KeyImpactPage />,
+            children: [
+              {
+                path: "",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/2",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/3",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/4",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/5",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/6",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/7",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/8",
+                element: <KeyImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/key-impacts/9",
+                element: <KeyImpactForm />,
+              },
+            ],
           },
           {
             path: "/project/dashboard/keychange/stakeholders",
             element: <StakeholdersPage />,
+            children: [
+              {
+                path: "",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/2",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/3",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/4",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/5",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/6",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/7",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/8",
+                element: <StakeholderForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/stakeholders/9",
+                element: <StakeholderForm />,
+              },
+            ],
           },
           {
             path: "",
             element: <KeyChangesPage />,
           },
           {
+            path: "/project/dashboard/keychange/priority",
+            element: <PriorityPage />,
+            children: [
+              {
+                path: "",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/2",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/3",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/4",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/5",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/6",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/7",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/8",
+                element: <PriorityForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/priority/9",
+                element: <PriorityForm />,
+              },
+            ],
+          },
+          {
             path: "/project/dashboard/keychange/risks",
             element: <RiskPage />,
+            children: [
+              {
+                path: "",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/2",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/3",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/4",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/5",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/6",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/7",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/8",
+                element: <RiskImpactForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/risks/9",
+                element: <RiskImpactForm />,
+              },
+            ],
           },
         ],
       },
