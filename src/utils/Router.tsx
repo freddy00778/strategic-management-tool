@@ -44,6 +44,7 @@ import IssueTwo from "../components/IssueRegister/IssuePerKeyChange/IssueTwo";
 import IssueThree from "../components/IssueRegister/IssuePerKeyChange/IssueThree";
 import IssueFour from "../components/IssueRegister/IssuePerKeyChange/IssueFour";
 import IssueFive from "../components/IssueRegister/IssuePerKeyChange/IssueFive";
+import ObjectiveForm from "../components/keyChanges/Objectives.tsx/ObjectiveForm";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -92,6 +93,44 @@ export const router = createBrowserRouter([
           {
             path: "/project/dashboard/keychange/objectives",
             element: <ObjectivesPage />,
+            children: [
+              {
+                path: "",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/2",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/3",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/4",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/5",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/6",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/7",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/8",
+                element: <ObjectiveForm />,
+              },
+              {
+                path: "/project/dashboard/keychange/objectives/9",
+                element: <ObjectiveForm />,
+              },
+            ],
           },
           {
             path: "/project/dashboard/keychange/key-impacts",
