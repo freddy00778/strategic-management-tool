@@ -62,10 +62,12 @@ const KeyChangeInfo = () => {
                     key={id}
                     className={`flex items-center border-b border-b-zinc-100 justify-between w-full px-10 py-4`}
                   >
-                    <div className={`  px-3 py-2 rounded-lg font-medium`}>
+                    <div
+                      className={`  px-3 py-2 rounded-lg font-medium w-full`}
+                    >
                       {department}
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4  w-full">
                       <div
                         className=" w-12 h-6 rounded-lg"
                         style={{ backgroundColor: affectedColor }}
