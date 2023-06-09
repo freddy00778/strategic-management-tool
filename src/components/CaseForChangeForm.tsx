@@ -207,7 +207,7 @@ const CaseForChangeForm = () => {
           variant="primary"
           size="lg"
           onClick={handleSave}
-          className="rounded-lg w-[40%]"
+          className="rounded-lg w-[40%] bg-primary-500"
           type="button"
         >
           Save & Continue

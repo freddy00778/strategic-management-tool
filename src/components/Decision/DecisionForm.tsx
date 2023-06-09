@@ -41,7 +41,7 @@ const DecisionForm = () => {
             variant="primary"
             size="lg"
             onClick={handleSave}
-            className="rounded-lg w-[30%]"
+            className="rounded-lg w-[30%] bg-primary-500"
             type="button"
           >
             Add A Decision

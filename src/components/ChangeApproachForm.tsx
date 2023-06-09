@@ -67,7 +67,7 @@ const ChangeApproachForm = () => {
       </div>
       <div className="py-12">
         <h1 className="text-[26px] py-6">Complexity of Change (Select)</h1>
-        <div className="flex w-full space-x-24">
+        <div className="flex w-full space-x-12">
           <RadioButton
             content={
               <ul className="flex flex-col space-y-3 mt-2">
@@ -82,7 +82,7 @@ const ChangeApproachForm = () => {
             value="optionD"
             selected={selectedValue1 === "optionD"}
             onChange={(value) => setSelectedValue1(value)}
-            className="flex w-full"
+            className="flex w-full "
           />
           <RadioButton
             content={
@@ -140,29 +140,31 @@ const ChangeApproachForm = () => {
           <img src={ChangeReadiness} alt="" />
         </div>
       </div>
-      <div className="py-8">
+      <div className="py-8 w-full">
         <h1 className="text-[26px] py-6">Change Readiness</h1>
-        <form action="submit" className="flex flex-row flex-wrap w-full ">
-          <InputField
-            id="text"
-            label="Start-Up"
-            value={startUp}
-            onChange={(e) => setStartUp(e.target.value)}
-            type="text"
-            placeholder="Provide Details"
-            required
-            className="w-2/4 m-0"
-          />
-          <InputField
-            id="text"
-            label="Implementation"
-            value={implement}
-            onChange={(e) => setImplement(e.target.value)}
-            type="text"
-            placeholder="Provide Details"
-            required
-            className="w-2/4 m-0"
-          />
+        <form action="submit" className="w-full space-y-10 ">
+          <div className="flex items-center justify-between w-full space-x-10">
+            <InputField
+              id="text"
+              label="Start-Up"
+              value={startUp}
+              onChange={(e) => setStartUp(e.target.value)}
+              type="text"
+              placeholder="Provide Details"
+              required
+              className="w-full m-0 "
+            />
+            <InputField
+              id="text"
+              label="Implementation"
+              value={implement}
+              onChange={(e) => setImplement(e.target.value)}
+              type="text"
+              placeholder="Provide Details"
+              required
+              className="w-full m-0"
+            />
+          </div>
           <div className="mt-8">
             <InputField
               id="text"
