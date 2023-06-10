@@ -199,7 +199,7 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
           variant="primary"
           size="md"
           onClick={handleSave}
-          className="rounded-lg w-[30%] mt-6"
+          className="rounded-lg w-[30%] mt-6 bg-primary-500"
           type="button"
         >
           Add Risk

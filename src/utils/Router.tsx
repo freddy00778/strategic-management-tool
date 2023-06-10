@@ -50,6 +50,7 @@ import RiskImpactForm from "../components/keyChanges/KeyChangeForms/RiskImpactFo
 import KeyImpactForm from "../components/keyChanges/KeyChangeForms/KeyImpactForm";
 import PriorityPage from "../components/keyChanges/PriorityPage";
 import PriorityForm from "../components/keyChanges/KeyChangeForms/PriorityForm";
+import BudgetForm from "../components/Budget/BudgetForm";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -322,6 +323,52 @@ export const router = createBrowserRouter([
       {
         path: "/project/dashboard/budget",
         element: <Budget />,
+        children: [
+          {
+            path: "/project/dashboard/budget/1",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/2",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/3",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/4",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/5",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/6",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/7",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/8",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/9",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/10",
+            element: <BudgetForm />,
+          },
+          {
+            path: "/project/dashboard/budget/11",
+            element: <BudgetForm />,
+          },
+        ],
       },
       {
         path: "/project/dashboard/casechange",

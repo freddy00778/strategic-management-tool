@@ -71,6 +71,14 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     const [date, setDate] = useState<Date | null>(null);
     const datePickerRef = useRef<any>(null);
     const [remainingChars, setRemainingChars] = useState(characterLimit);
+    const [selectedCurrency, setSelectedCurrency] = useState("USD");
+
+    const handleCurrencyChange = (
+      event: React.ChangeEvent<HTMLSelectElement>
+    ) => {
+      const selectedCurrency = event.target.value;
+      setSelectedCurrency(selectedCurrency);
+    };
 
     const handleInputChange = (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -284,6 +292,52 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             >
               <img src={calendar} alt="" className="w-3/4" />
             </div>
+          </div>
+        );
+      } else if (type === "number") {
+        return (
+          <div className="relative w-full flex">
+            <select
+              className="absolute z-10 bg-[#F3F3F3] border rounded-tl-lg rounded-bl-lg  border-border  py-5 px-4 h-16  font-normal text-sm leading-tight focus:outline-none focus:shadow-outline focus:ring-primary-200 focus:border-primary-200 focus:border-2"
+              onChange={handleCurrencyChange}
+              value={selectedCurrency}
+            >
+              <option value="USD">$</option>
+              <option value="GBP">£</option>
+              <option value="EUR">€</option>
+            </select>
+            <input
+              {...props}
+              ref={ref}
+              id={id}
+              type={type}
+              placeholder={placeholder}
+              required={required}
+              disabled={disabled}
+              onChange={onChange}
+              className={`
+      border
+      border-stroke
+      border-border
+      rounded-lg
+      w-[500px]
+      py-5 px-4
+      h-16
+      text-border
+      font-normal
+      text-sm
+      leading-tight
+      placeholder-placeholder
+      focus:outline-none
+      focus:shadow-outline
+      focus:ring-primary-200
+      focus:border-primary-200
+      focus:border-2
+      ${className}
+      ${error ? "border-red-600" : ""}
+      pl-20 // Add left padding to prevent text overlap
+    `}
+            />
           </div>
         );
       } else {

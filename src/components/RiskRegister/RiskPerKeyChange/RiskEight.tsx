@@ -42,7 +42,7 @@ const RiskEight = () => {
           variant="primary"
           size="md"
           onClick={openModal}
-          className="rounded-lg w-[25%]"
+          className="rounded-lg w-[25%] bg-primary-500"
           type="button"
         >
           Add Risk

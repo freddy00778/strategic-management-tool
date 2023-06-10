@@ -199,10 +199,10 @@ const IssueModalForm: React.FC<IssueModalFormProps> = ({
           variant="primary"
           size="md"
           onClick={handleSave}
-          className="rounded-lg w-[30%] mt-6"
+          className="rounded-lg w-[30%] mt-6 bg-primary-500"
           type="button"
         >
-          Add Risk
+          Add Issue
         </Button>
       </div>
     </div>
