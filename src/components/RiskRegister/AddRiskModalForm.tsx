@@ -3,6 +3,10 @@ import InputDropdown from "../InputDropdown";
 import Button from "../Button";
 import { DataType } from "../../../types";
 import { useState } from "react";
+import Table from "../Table";
+import lesson from "../../assets/images/lessons-log.svg";
+import cancel from "../../assets/images/cancel.svg";
+import RegisterNoteModal from "./RegisterNote/RegisterNoteModal";
 
 interface AddKeyChangeFormProps {
   risk: string;
@@ -17,6 +21,10 @@ interface AddKeyChangeFormProps {
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   assessment: string;
   setAssessment: React.Dispatch<React.SetStateAction<string>>;
+  assessment1: string;
+  setAssessment1: React.Dispatch<React.SetStateAction<string>>;
+  dateLogged: string;
+  setDateLogged: React.Dispatch<React.SetStateAction<string>>;
   reportedDate: string;
   setReportedDate: React.Dispatch<React.SetStateAction<string>>;
   addData: (newData: DataType) => void;
@@ -35,6 +43,10 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   setCategory,
   assessment,
   setAssessment,
+  assessment1,
+  setAssessment1,
+  dateLogged,
+  setDateLogged,
   reportedDate,
   setReportedDate,
   onClose,
@@ -58,6 +70,17 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   ];
   const [selectedOption1, setSelectedOption1] = useState(options1[0]);
   const [selectedOption2, setSelectedOption2] = useState(options2[0]);
+  const [secondModalOpen, setSecondModalOpen] = useState(false);
+  const [data1, setData1] = useState<DataType[]>([]);
+  const [division, setDivision] = useState("");
+  const [text, setText] = useState("");
+  const addData1 = (newData: DataType) => {
+    setData1((prevData) => [...prevData, newData]);
+  };
+
+  const openModal = () => {
+    setSecondModalOpen(true); // Open the modal when button is clicked
+  };
   const handleSave = () => {
     addData({
       risk: risk,
@@ -194,6 +217,55 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
         required
         className="w-full m-0"
       />
+      <div className="flex w-full py-4 border-b border-border border-opacity-20 items-center justify-between ">
+        <h1>Notes</h1>
+
+        <Button
+          variant="primary"
+          size="md"
+          onClick={openModal}
+          className="rounded-lg w-[30%] bg-primary-500"
+          type="button"
+        >
+          Add Notes
+        </Button>
+      </div>
+      <div className="relative">
+        <div className="flex flex-col w-full  h-[100%]">
+          <Table
+            headings={[
+              "Date",
+              "Notes",
+              "Previous RS",
+              "Previous Rating",
+              "Risk Assessment",
+            ]}
+            data={data1}
+            //addData={addData}
+            children={
+              <div className=" space-y-2">
+                <img src={lesson} alt="lessons" width={140} />
+                <h1 className="text-[18px]">No Notes</h1>
+              </div>
+            }
+          />
+        </div>
+        <RegisterNoteModal
+          isOpen={secondModalOpen}
+          onClose={() => setSecondModalOpen(false)}
+          className=" absolute "
+          cancel={cancel}
+          width={14}
+          assessment={assessment1}
+          setAssessment={setAssessment1}
+          dateLogged={dateLogged}
+          setDateLogged={setDateLogged}
+          text={text}
+          setText={setText}
+          addData={addData1}
+          dataLength={data1.length}
+        />
+      </div>
       <div className="flex w-full h-[20%] items-end justify-end ">
         <Button
           variant="primary"
