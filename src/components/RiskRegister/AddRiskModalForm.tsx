@@ -52,27 +52,27 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   onClose,
   addData,
 }) => {
-  const options1 = [
-    "Select",
-    "Strategic Change",
-    "Start-Up",
-    "Implementation",
-    "Anchoring",
-    "Benefits",
-  ];
+  const options1 = ["Select", "Yes", "No"];
   const options2 = [
     "Select",
-    "Strategic Change",
-    "Start-Up",
-    "Implementation",
-    "Anchoring",
-    "Benefits",
+    "Highly Intolerable",
+    "Intolerable",
+    "ALARP",
+    "Maintain",
+  ];
+  const options3 = [
+    "Select",
+    "Severe Impact",
+    "Significant Impact",
+    "Moderate Impact",
+    "Minor Impact",
+    "Negligible Impact",
   ];
   const [selectedOption1, setSelectedOption1] = useState(options1[0]);
   const [selectedOption2, setSelectedOption2] = useState(options2[0]);
+  const [selectedOption3, setSelectedOption3] = useState(options3[0]);
   const [secondModalOpen, setSecondModalOpen] = useState(false);
   const [data1, setData1] = useState<DataType[]>([]);
-  const [division, setDivision] = useState("");
   const [text, setText] = useState("");
   const addData1 = (newData: DataType) => {
     setData1((prevData) => [...prevData, newData]);
@@ -92,6 +92,7 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
       reportedDate: reportedDate,
       options1: options1,
       options2: options2,
+      options3: options3,
     });
     onClose();
   };
@@ -100,6 +101,9 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   };
   const handleOptionSelected2 = (option2: string) => {
     setSelectedOption2(option2);
+  };
+  const handleOptionSelected3 = (option3: string) => {
+    setSelectedOption3(option3);
   };
   return (
     <div className="flex flex-col space-y-16 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200">
@@ -193,9 +197,9 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
         <InputDropdown
           id="dropdown"
           header="Impact Level"
-          label={`${selectedOption2}`}
-          options={options2}
-          onOptionSelected={handleOptionSelected2}
+          label={`${selectedOption3}`}
+          options={options3}
+          onOptionSelected={handleOptionSelected3}
           className=" w-full m-0"
         />
         <InputDropdown
