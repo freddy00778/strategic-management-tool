@@ -3,12 +3,7 @@ import InputField from "../../../InputField";
 import InputDropdown from "../../../InputDropdown";
 
 const Assets = () => {
-  const options = [
-    "Select",
-    "Strategic Change",
-    "BAU Change",
-    "Annual Corporate Initiative",
-  ];
+  const options = ["Select", "Fixed", "Moveable", "Infrastructure"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const handleOptionSelected = (option: string) => {
     setSelectedOption(option);

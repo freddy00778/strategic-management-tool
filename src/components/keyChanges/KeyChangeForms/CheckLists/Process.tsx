@@ -5,9 +5,10 @@ import InputDropdown from "../../../InputDropdown";
 const Process = () => {
   const options = [
     "Select",
-    "Strategic Change",
-    "BAU Change",
-    "Annual Corporate Initiative",
+    "Complexity",
+    "Integration",
+    "Automation",
+    "Workload",
   ];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const handleOptionSelected = (option: string) => {

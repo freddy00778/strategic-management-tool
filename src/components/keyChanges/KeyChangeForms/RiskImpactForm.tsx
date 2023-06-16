@@ -13,24 +13,23 @@ interface RiskImpactFormProps {
 const RiskImpactForm: React.FC<RiskImpactFormProps> = ({ onChange }) => {
   const [inputValue, setInputValue] = useState("");
   const [displayValues, setDisplayValues] = useState<string[]>([]);
-  const options = ["Select", "Key Change 2", "Key Change 3", "Key Change 4"];
-  const options1 = [
-    "Select",
-    "Strategic Change",
-    "BAU Change",
-    "Annual Corporate Initiative",
-  ];
+  const options1 = ["Select", "High Risk", "Significant Risk", "Moderate Risk"];
   const options2 = [
     "Select",
-    "Strategic Change",
-    "BAU Change",
-    "Annual Corporate Initiative",
+    "Severe Impact",
+    "Significant Impact",
+    "Moderate Impact",
+    "Minor Impact",
+    "Negligible Impact",
   ];
+  const options = ["Select", "Key Change 1", "Key Change 2", "Key Change 3"];
   const options3 = [
     "Select",
-    "Strategic Change",
-    "BAU Change",
-    "Annual Corporate Initiative",
+    "Very Likely",
+    "Likely",
+    "Possible",
+    "Unlikely",
+    "Very Unlikely",
   ];
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [selectedOption1, setSelectedOption1] = useState(options[0]);

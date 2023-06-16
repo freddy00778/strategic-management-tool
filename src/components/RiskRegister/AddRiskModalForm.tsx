@@ -72,7 +72,6 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
   const [selectedOption2, setSelectedOption2] = useState(options2[0]);
   const [secondModalOpen, setSecondModalOpen] = useState(false);
   const [data1, setData1] = useState<DataType[]>([]);
-  const [division, setDivision] = useState("");
   const [text, setText] = useState("");
   const addData1 = (newData: DataType) => {
     setData1((prevData) => [...prevData, newData]);
