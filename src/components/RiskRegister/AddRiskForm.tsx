@@ -24,6 +24,8 @@ const AddRiskForm: React.FC<AddRiskFormProps> = ({
   const [person, setPerson] = useState("");
   const [category, setCategory] = useState("");
   const [assessment, setAssessment] = useState("");
+  const [assessment1, setAssessment1] = useState("");
+  const [dateLogged, setDateLogged] = useState("");
   const [reportedDate, setReportedDate] = useState("");
   const [dataEntries, setDataEntries] = useState<DataType[]>([]);
 
@@ -35,6 +37,8 @@ const AddRiskForm: React.FC<AddRiskFormProps> = ({
       person,
       category,
       assessment,
+      assessment1,
+      dateLogged,
       reportedDate,
     };
     addData(newData);
@@ -45,6 +49,8 @@ const AddRiskForm: React.FC<AddRiskFormProps> = ({
     setPerson("");
     setCategory("");
     setAssessment("");
+    setAssessment1("");
+    setDateLogged("");
     setReportedDate("");
   };
 
@@ -64,6 +70,10 @@ const AddRiskForm: React.FC<AddRiskFormProps> = ({
         setCategory={setCategory}
         assessment={assessment}
         setAssessment={setAssessment}
+        assessment1={assessment1}
+        setAssessment1={setAssessment1}
+        dateLogged={dateLogged}
+        setDateLogged={setDateLogged}
         reportedDate={reportedDate}
         setReportedDate={setReportedDate}
         onClose={onClose}

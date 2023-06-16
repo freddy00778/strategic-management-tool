@@ -21,6 +21,10 @@ interface AddRiskModalProps {
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   assessment: string;
   setAssessment: React.Dispatch<React.SetStateAction<string>>;
+  assessment1: string;
+  setAssessment1: React.Dispatch<React.SetStateAction<string>>;
+  dateLogged: string;
+  setDateLogged: React.Dispatch<React.SetStateAction<string>>;
   reportedDate: string;
   setReportedDate: React.Dispatch<React.SetStateAction<string>>;
   addData: (newData: DataType) => void;
@@ -44,6 +48,10 @@ const AddRiskModal: FC<AddRiskModalProps> = ({
   setCategory,
   assessment,
   setAssessment,
+  assessment1,
+  setAssessment1,
+  dateLogged,
+  setDateLogged,
   reportedDate,
   setReportedDate,
   addData,
@@ -70,6 +78,10 @@ const AddRiskModal: FC<AddRiskModalProps> = ({
         setCategory={setCategory}
         assessment={assessment}
         setAssessment={setAssessment}
+        assessment1={assessment1}
+        setAssessment1={setAssessment1}
+        dateLogged={dateLogged}
+        setDateLogged={setDateLogged}
         reportedDate={reportedDate}
         setReportedDate={setReportedDate}
         onClose={onClose}

@@ -14,33 +14,33 @@ interface IssueFormProps {
 }
 
 const IssueForm: React.FC<IssueFormProps> = ({ isOpen, onClose, addData }) => {
-  const [risk, setRisk] = useState("");
+  const [issue, setIssue] = useState("");
   const [owner, setOwner] = useState("");
   const [action, setAction] = useState("");
   const [person, setPerson] = useState("");
-  const [category, setCategory] = useState("");
-  const [assessment, setAssessment] = useState("");
+  const [assessment1, setAssessment1] = useState("");
+  const [dateLogged, setDateLogged] = useState("");
   const [reportedDate, setReportedDate] = useState("");
   const [dataEntries, setDataEntries] = useState<DataType[]>([]);
 
   const handleAddData = () => {
     const newData: DataType = {
-      risk,
+      issue,
       owner,
       action,
       person,
-      category,
-      assessment,
+      assessment1,
+      dateLogged,
       reportedDate,
     };
     addData(newData);
     setDataEntries((prevDataEntries) => [...prevDataEntries, newData]);
-    setRisk("");
+    setIssue("");
     setOwner("");
     setAction("");
     setPerson("");
-    setCategory("");
-    setAssessment("");
+    setAssessment1("");
+    setDateLogged("");
     setReportedDate("");
   };
 
@@ -48,18 +48,18 @@ const IssueForm: React.FC<IssueFormProps> = ({ isOpen, onClose, addData }) => {
     <div className=" h-full w-full max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200 ">
       <IssueModal
         isOpen={isOpen}
-        risk={risk}
-        setRisk={setRisk}
+        issue={issue}
+        setIssue={setIssue}
         owner={owner}
         setOwner={setOwner}
         action={action}
         setAction={setAction}
         person={person}
         setPerson={setPerson}
-        category={category}
-        setCategory={setCategory}
-        assessment={assessment}
-        setAssessment={setAssessment}
+        assessment1={assessment1}
+        setAssessment1={setAssessment1}
+        dateLogged={dateLogged}
+        setDateLogged={setDateLogged}
         reportedDate={reportedDate}
         setReportedDate={setReportedDate}
         onClose={onClose}
