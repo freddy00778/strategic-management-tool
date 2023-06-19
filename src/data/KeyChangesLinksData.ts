@@ -28,7 +28,7 @@ export const KeyChangesLinksData: NavLinksProps[] = [
   },
   {
     id: "6",
-    title: "Key Change Prioritsation",
+    title: "Key Change Prioritisation",
     route: "/project/dashboard/keychange/priority",
   },
 ];

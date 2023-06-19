@@ -31,8 +31,21 @@ const BudgetLayout = () => {
           <span className="flex w-1/4">Budget List</span>
           <div className="flex w-3/4 items-center justify-between">
             <span className="text-primary-500">Budget Details</span>
-            <div className="flex px-6 py-3 border border-border border-opacity-40 rounded-lg items-center justify-center text-sm">
-              Total Budget: 4000.00
+            <div className="flex space-x-6">
+              <div className="flex px-6 py-3 border cursor-pointer border-border border-opacity-40 rounded-lg items-center justify-center text-sm">
+                <label>
+                  <span>Select Currency: </span>
+                  <select id="currency">
+                    <option value="USD">$</option>
+                    <option value="EUR">€</option>
+                    <option value="JPY">¥</option>
+                    <option value="GBP">£</option>
+                  </select>
+                </label>
+              </div>
+              <div className="flex px-6 py-3 border border-border border-opacity-40 rounded-lg items-center justify-center text-sm">
+                Total Budget: 4000.00
+              </div>
             </div>
           </div>
         </div>

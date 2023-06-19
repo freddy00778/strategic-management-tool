@@ -12,6 +12,7 @@ import riskRegister from "../assets/images/risk-register.svg";
 import issueRegister from "../assets/images/issue-register.svg";
 import decisionRegister from "../assets/images/decision-register.svg";
 import lessons from "../assets/images/lessons.svg";
+import date from "../assets/images/dates.svg";
 
 export const NavLinksData: NavLinksProps[] = [
   {
@@ -58,36 +59,42 @@ export const NavLinksData: NavLinksProps[] = [
   },
   {
     id: "8",
+    title: "Key Dates",
+    image: date,
+    route: "/project/dashboard/keydates",
+  },
+  {
+    id: "9",
     title: "Case for Change",
     image: caseChange,
     route: "/project/dashboard/casechange",
   },
   {
-    id: "9",
+    id: "10",
     title: "Transition Curve",
     image: transitionCurve,
     route: "/project/dashboard/transitioncurve",
   },
   {
-    id: "10",
+    id: "11",
     title: "Risk Register",
     image: riskRegister,
     route: "/project/dashboard/riskregister",
   },
   {
-    id: "11",
+    id: "12",
     title: "Issue Register",
     image: issueRegister,
     route: "/project/dashboard/issueregister",
   },
   {
-    id: "12",
+    id: "13",
     title: "Decision Register",
     image: decisionRegister,
     route: "/project/dashboard/decisionregister",
   },
   {
-    id: "13",
+    id: "14",
     title: "Lessons Learnt Log",
     image: lessons,
     route: "/project/dashboard/lessons",

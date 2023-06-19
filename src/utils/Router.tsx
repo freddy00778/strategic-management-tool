@@ -51,6 +51,7 @@ import KeyImpactForm from "../components/keyChanges/KeyChangeForms/KeyImpactForm
 import PriorityPage from "../components/keyChanges/PriorityPage";
 import PriorityForm from "../components/keyChanges/KeyChangeForms/PriorityForm";
 import BudgetForm from "../components/Budget/BudgetForm";
+import KeyDates from "../Pages/Project/KeyDates";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -369,6 +370,10 @@ export const router = createBrowserRouter([
             element: <BudgetForm />,
           },
         ],
+      },
+      {
+        path: "/project/dashboard/keydates",
+        element: <KeyDates />,
       },
       {
         path: "/project/dashboard/casechange",

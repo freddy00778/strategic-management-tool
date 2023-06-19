@@ -72,7 +72,7 @@ const ObjectiveForm: React.FC<ObjectiveFormProps> = ({ onChange }) => {
             className="w-full h-[200px] "
             characterLimit={120}
           />
-          <div>
+          <div className="py-16">
             <DisplayValuesComponent
               displayValues={displayValues1}
               handleDeleteValue={handleDeleteValue1}

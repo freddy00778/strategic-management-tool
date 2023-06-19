@@ -29,22 +29,26 @@ const RiskFour = () => {
   return (
     <div className="relative  h-full">
       <div className="flex h-1/4 items-center justify-between p-6">
-        <Button
-          variant="primary"
-          size="md"
-          onClick={openModal}
-          className="rounded-lg w-[25%] bg-primary-500"
-          type="button"
-        >
-          Add Risk
-        </Button>
-        <InputDropdown
-          id="dropdown"
-          label={`${selectedOption1}`}
-          options={options1}
-          onOptionSelected={handleOptionSelected1}
-          className=" w-[200px] m-0"
-        />
+        <div className="w-1/4">
+          <Button
+            variant="primary"
+            size="md"
+            onClick={openModal}
+            className="rounded-lg w-full bg-primary-500"
+            type="button"
+          >
+            Add Risk
+          </Button>
+        </div>
+        <div className="w-1/4">
+          <InputDropdown
+            id="dropdown"
+            label={`${selectedOption1}`}
+            options={options1}
+            onOptionSelected={handleOptionSelected1}
+            className=" w-[170px]  m-0"
+          />
+        </div>
         <div className="flex items-center space-x-4">
           <h1 className="text-[#000] font-semibold text-[18px]">
             Number of Risks

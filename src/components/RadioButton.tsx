@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 type RadioButtonProps = {
-  content: string | JSX.Element;
+  content?: string | JSX.Element;
   title: string | JSX.Element;
   selected: boolean;
   name: string;
@@ -25,7 +25,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
 }) => {
   return (
     <div
-      className={`flex w-full  space-x-4 border-2 rounded-xl py-6
+      className={`flex w-full  space-x-4 border-2 rounded-xl py-4
         ${selected ? "border-primary-500" : "border-[#DBDBDB]"}`}
     >
       <input
