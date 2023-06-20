@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from "react";
 import InputField from "./InputField";
-
+import del from "../assets/images/delete.svg";
 interface DynamicFieldProps {
   data: any[];
   setData: (newData: any[]) => void;
@@ -16,14 +16,15 @@ interface DynamicFieldProps {
   >; // changed string to the specified types
   idBase: string;
   labels: Record<string, string>;
+  placeholders: Record<string, string>;
 }
-
 const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
   data,
   setData,
   dataStructure,
   idBase,
   labels,
+  placeholders,
 }) => {
   const handleDataChange = (index: number, field: string, value: string) => {
     const newData = [...data];
@@ -39,25 +40,38 @@ const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
     handleDataChange(index, field, e.target.value);
   };
 
+  const handleDelete = (index: number) => {
+    const newData = [...data];
+    newData.splice(index, 1);
+    setData(newData);
+  };
+
   return (
     <>
       {data.map((item, index) => (
-        <div key={index} className="flex h-full w-full space-x-8">
+        <div key={index} className="flex h-full w-full space-x-6 items-center">
           {Object.keys(dataStructure).map((field, fieldIndex) => (
             <div
               key={fieldIndex}
-              className="flex items-center w-full space-x-6"
+              className="flex items-center w-full space-x-4"
             >
               <InputField
                 id={`${idBase}_${field}_${index}`}
                 label={labels[field]}
                 value={item[field]}
-                onChange={handleChange} // modified
+                onChange={handleChange}
                 type={dataStructure[field]}
+                placeholder={placeholders[field]}
                 className="w-full m-0"
               />
             </div>
           ))}
+          <button
+            onClick={() => handleDelete(index)}
+            className="px-3 py-3 mt-8 bg-red-100 rounded-full"
+          >
+            <img src={del} alt="" width={60} />
+          </button>
         </div>
       ))}
     </>

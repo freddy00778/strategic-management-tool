@@ -8,8 +8,19 @@ interface Benefit {
   startDate: string;
   endDate: string;
 }
+interface Other {
+  other: string;
+  startDate: string;
+  endDate: string;
+}
 
-const defaultBenefitStructure: Record<
+interface Activity {
+  activity: string;
+  startDate: string;
+  endDate: string;
+}
+
+const defaultStructure: Record<
   string,
   | "number"
   | "text"
@@ -19,20 +30,41 @@ const defaultBenefitStructure: Record<
   | "search"
   | "datepicker"
 > = {
-  benefit: "text",
+  content: "text",
   startDate: "datepicker",
   endDate: "datepicker",
 };
 const defaultBenefit: Benefit = {
-  benefit: "",
+  benefit: "Provide Details",
   startDate: "",
   endDate: "",
 };
+const defaultOther: Other = {
+  other: "Provide Details",
+  startDate: "",
+  endDate: "",
+};
+
+const defaultActivity: Activity = {
+  activity: "Provide Details",
+  startDate: "",
+  endDate: "",
+};
+
 const StrategicProjects: React.FC = () => {
   const [date, setDate] = useState("");
   const [text, setText] = useState("");
   const [benefits, setBenefits] = useState<Benefit[]>([defaultBenefit]);
+  const [others, setOthers] = useState<Other[]>([defaultOther]);
+  const [activities, setActivities] = useState<Activity[]>([defaultActivity]);
 
+  const addOther = () => {
+    setOthers([...others, defaultOther]);
+  };
+
+  const addActivity = () => {
+    setActivities([...activities, defaultActivity]);
+  };
   const addBenefit = () => {
     setBenefits([...benefits, defaultBenefit]);
   };
@@ -197,11 +229,16 @@ const StrategicProjects: React.FC = () => {
         <DynamicFieldSet
           data={benefits}
           setData={setBenefits}
-          dataStructure={defaultBenefitStructure}
+          dataStructure={defaultStructure}
           idBase="benefit"
           labels={{
             benefit: "Benefit",
             startDate: "Start Date",
+            endDate: "End Date",
+          }}
+          placeholders={{
+            benefit: "Provide  Details",
+            startDate: "End Date",
             endDate: "End Date",
           }}
         />
@@ -211,41 +248,30 @@ const StrategicProjects: React.FC = () => {
         <Button
           size="md"
           variant="primary"
-          onClick={() => alert("Realization Phase")}
+          onClick={addOther}
           type="submit"
           className="w-[25%] m-0 bg-primary-500 rounded-lg"
         >
           Add
         </Button>
       </div>
-      <div className="flex h-full w-full space-x-8">
-        <InputField
-          id="change"
-          label="Key Milestone"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Provide Details"
-          type="text"
-          className="w-full m-0"
+      <div className="flex flex-col h-full w-full space-y-8 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200">
+        <DynamicFieldSet
+          data={others}
+          setData={setOthers}
+          dataStructure={defaultStructure}
+          idBase="benefit"
+          labels={{
+            other: "Others",
+            startDate: "Start Date",
+            endDate: "End Date",
+          }}
+          placeholders={{
+            other: "Provide  Details",
+            startDate: "",
+            endDate: "",
+          }}
         />
-        <div className="flex items-center w-full space-x-6">
-          <InputField
-            id="change"
-            label="Start Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            type="datepicker"
-            className="w-full m-0"
-          />
-          <InputField
-            id="change"
-            label="End Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            type="datepicker"
-            className="w-full m-0"
-          />
-        </div>
       </div>
       <h1 className="text-2xl">Key Project Activities</h1>
       <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
@@ -253,41 +279,30 @@ const StrategicProjects: React.FC = () => {
         <Button
           size="md"
           variant="primary"
-          onClick={() => alert("Realization Phase")}
+          onClick={addActivity}
           type="submit"
           className="w-[25%] m-0 bg-primary-500 rounded-lg"
         >
           Add
         </Button>
       </div>
-      <div className="flex h-full w-full space-x-8">
-        <InputField
-          id="change"
-          label="Key Milestone"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Provide Details"
-          type="text"
-          className="w-full m-0"
+      <div className="flex flex-col h-full w-full space-y-8 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200">
+        <DynamicFieldSet
+          data={activities}
+          setData={setActivities}
+          dataStructure={defaultStructure}
+          idBase="benefit"
+          labels={{
+            activity: "Activity",
+            startDate: "Start Date",
+            endDate: "End Date",
+          }}
+          placeholders={{
+            activity: "Provide  Details",
+            startDate: "",
+            endDate: "",
+          }}
         />
-        <div className="flex items-center w-full space-x-6">
-          <InputField
-            id="change"
-            label="Start Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            type="datepicker"
-            className="w-full m-0"
-          />
-          <InputField
-            id="change"
-            label="End Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            type="datepicker"
-            className="w-full m-0"
-          />
-        </div>
       </div>
     </div>
   );
