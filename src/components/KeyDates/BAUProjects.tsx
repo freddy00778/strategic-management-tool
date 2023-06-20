@@ -1,20 +1,12 @@
 import InputField from "../InputField";
 import Button from "../Button";
+import { useState } from "react";
 
-interface BAUProjectProps {
-  date: string;
-  setDate: React.Dispatch<React.SetStateAction<string>>;
-  text: string;
-  setText: React.Dispatch<React.SetStateAction<string>>;
-}
-const BAUProjects: React.FC<BAUProjectProps> = ({
-  date,
-  setDate,
-  text,
-  setText,
-}) => {
+const BAUProjects = () => {
+  const [date, setDate] = useState("");
+  const [text, setText] = useState("");
   return (
-    <div className="flex-col w-full h-full space-y-10  overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200 max-h-[210px]">
+    <div className="flex-col w-full h-full space-y-10  overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200 max-h-[260px]">
       <div className="flex h-full w-full space-x-8">
         <InputField
           id="change"
