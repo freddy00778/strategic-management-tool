@@ -36,7 +36,7 @@ const InstructionForm = () => {
           variant="primary"
           size="lg"
           onClick={handleRouteToPasswordReset}
-          className="rounded-lg w-full"
+          className="rounded-lg w-full bg-primary-500"
           type="button"
         >
           Send Instructions

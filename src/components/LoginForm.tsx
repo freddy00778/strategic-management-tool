@@ -90,11 +90,11 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col w-full  px-36">
-      <div className="flex flex-col w-full  space-y-10">
+      <div className="flex flex-col w-full  space-y-6">
         <a href="/">
           <img src={fav} alt="" />
         </a>
-        <form action="submit" className=" space-y-8">
+        <form action="submit" className=" ">
           <div className="space-y-4 mb-12">
             <h1 className="text-[#000] font-medium text-3xl">
               Sign in to Change Verve

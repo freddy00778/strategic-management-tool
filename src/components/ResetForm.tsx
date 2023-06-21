@@ -2,11 +2,15 @@ import fav from "../assets/images/fav.svg";
 import InputField from "./InputField";
 import { useState } from "react";
 import Button from "./Button";
-
+import { useNavigate } from "react-router-dom";
 const ResetForm = () => {
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
+  const handleRouteToLogin = () => {
+    navigate("/");
+  };
   return (
     <div className="flex flex-col w-full px-36 space-y-10">
       <a href="/">
@@ -41,8 +45,8 @@ const ResetForm = () => {
         <Button
           variant="primary"
           size="lg"
-          onClick={() => alert("Please enter your")}
-          className="rounded-lg w-full"
+          onClick={handleRouteToLogin}
+          className="rounded-lg w-full bg-primary-500"
           type="button"
         >
           Reset Password
