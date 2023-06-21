@@ -34,6 +34,10 @@ const defaultStructure: Record<
   startDate: "datepicker",
   endDate: "datepicker",
 };
+
+const characterLimits: Record<string, number> = {
+  content: 120,
+};
 const defaultBenefit: Benefit = {
   benefit: "Provide Details",
   startDate: "",
@@ -230,17 +234,18 @@ const StrategicProjects: React.FC = () => {
           data={benefits}
           setData={setBenefits}
           dataStructure={defaultStructure}
-          idBase="benefit"
+          idBase="benefits"
           labels={{
-            benefit: "Benefit",
+            content: "Benefit",
             startDate: "Start Date",
             endDate: "End Date",
           }}
           placeholders={{
-            benefit: "Provide  Details",
-            startDate: "End Date",
-            endDate: "End Date",
+            content: "Provide  Details",
+            startDate: "",
+            endDate: "",
           }}
+          characterLimits={characterLimits}
         />
       </div>
       <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
@@ -260,17 +265,18 @@ const StrategicProjects: React.FC = () => {
           data={others}
           setData={setOthers}
           dataStructure={defaultStructure}
-          idBase="benefit"
+          idBase="others"
           labels={{
-            other: "Others",
+            content: "Others",
             startDate: "Start Date",
             endDate: "End Date",
           }}
           placeholders={{
-            other: "Provide  Details",
+            content: "Provide  Details",
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
         />
       </div>
       <h1 className="text-2xl">Key Project Activities</h1>
@@ -291,17 +297,18 @@ const StrategicProjects: React.FC = () => {
           data={activities}
           setData={setActivities}
           dataStructure={defaultStructure}
-          idBase="benefit"
+          idBase="activities"
           labels={{
-            activity: "Activity",
+            content: "Activity",
             startDate: "Start Date",
             endDate: "End Date",
           }}
           placeholders={{
-            activity: "Provide  Details",
+            content: "Provide  Details",
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
         />
       </div>
     </div>

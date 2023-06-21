@@ -2,20 +2,44 @@ import InputField from "../../InputField";
 import { useState } from "react";
 import Button from "../../Button";
 import DisplayValuesComponent from "../../DisplayValuesComponent";
-
+import DynamicFieldSet from "../../DynamicFieldSet";
 interface ObjectiveFormProps {
   onChange?: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
 }
+interface Benefit {
+  benefit: string;
+  measure: string;
+}
+const defaultStructure: Record<
+  string,
+  | "number"
+  | "text"
+  | "password"
+  | "email"
+  | "textarea"
+  | "search"
+  | "datepicker"
+> = {
+  content: "text",
+  details: "text",
+};
+
+const characterLimits: Record<string, number> = {
+  content: 120,
+};
+const defaultBenefit: Benefit = {
+  benefit: "How the change adds value",
+  measure: "Provide the necessary information",
+};
 
 const ObjectiveForm: React.FC<ObjectiveFormProps> = ({ onChange }) => {
-  const [benefit, setBenefit] = useState("");
-  const [measure, setMeasure] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [inputValue1, setInputValue1] = useState("");
   const [displayValues, setDisplayValues] = useState<string[]>([]);
   const [displayValues1, setDisplayValues1] = useState<string[]>([]);
+  const [benefits, setBenefits] = useState<Benefit[]>([defaultBenefit]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -52,7 +76,9 @@ const ObjectiveForm: React.FC<ObjectiveFormProps> = ({ onChange }) => {
     newValues.splice(index, 1);
     setDisplayValues1(newValues);
   };
-
+  const addBenefit = () => {
+    setBenefits([...benefits, defaultBenefit]);
+  };
   return (
     <form className="flex flex-col w-full h-full overflow-y-auto max-h-[800px] scrollbar-thin scrollbar-thumb-zinc-200">
       <div className="flex flex-col w-full px-10 py-10  space-y-16  ">
@@ -105,40 +131,38 @@ const ObjectiveForm: React.FC<ObjectiveFormProps> = ({ onChange }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full px-10 py-4 space-y-16  ">
-        <div className="w-full flex items-center border-b border-b-border py-4">
-          <h1 className="text-[22px] text-black">Benefits of the change</h1>
+      <div className="flex flex-col w-full px-10 py-4  space-y-16  ">
+        <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
+          <h1>Benefit</h1>
+          <Button
+            size="md"
+            variant="primary"
+            onClick={addBenefit}
+            type="submit"
+            className="w-[25%] m-0 bg-primary-500 rounded-lg"
+          >
+            Add Benefit
+          </Button>
         </div>
-        <div className="flex flex-col w-full space-y-24">
-          <InputField
-            id="user-name"
-            value={benefit}
-            onChange={(e) => setBenefit(e.target.value)}
-            type="textarea"
-            className="w-full h-[200px] "
-            placeholder="How the change adds value"
-            characterLimit={120}
+        <div className="flex flex-col h-full w-full space-y-8 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200">
+          <DynamicFieldSet
+            data={benefits}
+            setData={setBenefits}
+            dataStructure={defaultStructure}
+            idBase="benefits"
+            labels={{
+              content: "Benefits of the change",
+              details: "How will the benefit be measured?",
+            }}
+            placeholders={{
+              content: "How the change adds value",
+              details: "Provide the necessary information",
+            }}
+            characterLimits={characterLimits}
           />
         </div>
       </div>
-      <div className="flex flex-col w-full px-10 py-10 space-y-16  ">
-        <div className="w-full flex items-center border-b border-b-border py-4">
-          <h1 className="text-[22px] text-black">
-            How will the benefit be measured?
-          </h1>
-        </div>
-        <div className="flex flex-col w-full space-y-24">
-          <InputField
-            id="user-name"
-            value={measure}
-            onChange={(e) => setMeasure(e.target.value)}
-            type="textarea"
-            className="w-full h-[200px] "
-            placeholder="Provide the necessary information"
-            characterLimit={120}
-          />
-        </div>
-      </div>
+
       <div className="flex w-full h-full space-x-20 px-10 py-10 pb-10 items-end justify-end">
         <Button
           variant="primary"

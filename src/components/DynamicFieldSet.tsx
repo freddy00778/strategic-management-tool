@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler } from "react";
 import InputField from "./InputField";
 import del from "../assets/images/delete.svg";
+
 interface DynamicFieldProps {
   data: any[];
   setData: (newData: any[]) => void;
@@ -17,6 +18,7 @@ interface DynamicFieldProps {
   idBase: string;
   labels: Record<string, string>;
   placeholders: Record<string, string>;
+  characterLimits: Record<string, number>;
 }
 const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
   data,
@@ -25,6 +27,7 @@ const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
   idBase,
   labels,
   placeholders,
+  characterLimits,
 }) => {
   const handleDataChange = (index: number, field: string, value: string) => {
     const newData = [...data];
@@ -62,6 +65,12 @@ const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
                 onChange={handleChange}
                 type={dataStructure[field]}
                 placeholder={placeholders[field]}
+                characterLimit={
+                  dataStructure[field] === "text" ||
+                  dataStructure[field] === "textarea"
+                    ? characterLimits?.[field]
+                    : undefined
+                }
                 className="w-full m-0"
               />
             </div>
