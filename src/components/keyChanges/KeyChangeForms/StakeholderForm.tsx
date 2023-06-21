@@ -186,7 +186,7 @@ const StakeholderForm: React.FC<StakeholderFormProps> = ({ onChange }) => {
       <Training />
       <div className="flex flex-col w-full px-10 py-4  space-y-16  ">
         <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
-          <h1>Division/Department/Unit</h1>
+          <h1>Other Departments/Units</h1>
           <Button
             size="md"
             variant="primary"
