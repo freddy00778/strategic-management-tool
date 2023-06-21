@@ -49,6 +49,9 @@ const defaultStructure: Record<
   startDate: "datepicker",
   endDate: "datepicker",
 };
+const characterLimits: Record<string, number> = {
+  content: 120,
+};
 const defaultBenefit: Performance = {
   performance: "Provide Details",
   startDate: "",
@@ -163,6 +166,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "End Date",
             endDate: "End Date",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="border-b py-2 border-border border-opacity-20">
@@ -214,6 +219,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="border-b py-2 border-border border-opacity-20">
@@ -265,6 +272,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="border-b py-2 border-border border-opacity-20">
@@ -316,6 +325,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="border-b py-2 border-border border-opacity-20">
@@ -360,6 +371,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="border-b py-2 border-border border-opacity-20">
@@ -404,6 +417,8 @@ const AnnualCorporate: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
     </div>

@@ -19,6 +19,7 @@ interface DynamicFieldProps {
   labels: Record<string, string>;
   placeholders: Record<string, string>;
   characterLimits: Record<string, number>;
+  width: number;
 }
 const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
   data,
@@ -28,6 +29,7 @@ const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
   labels,
   placeholders,
   characterLimits,
+  width,
 }) => {
   const handleDataChange = (index: number, field: string, value: string) => {
     const newData = [...data];
@@ -77,9 +79,9 @@ const DynamicFieldSet: React.FC<DynamicFieldProps> = ({
           ))}
           <button
             onClick={() => handleDelete(index)}
-            className="px-3 py-3 mt-8 bg-red-100 rounded-full"
+            className="px-3 py-3  bg-red-100 rounded-full"
           >
-            <img src={del} alt="" width={60} />
+            <img src={del} alt="" width={width} />
           </button>
         </div>
       ))}

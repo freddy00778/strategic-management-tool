@@ -159,6 +159,7 @@ const ObjectiveForm: React.FC<ObjectiveFormProps> = ({ onChange }) => {
               details: "Provide the necessary information",
             }}
             characterLimits={characterLimits}
+            width={40}
           />
         </div>
       </div>

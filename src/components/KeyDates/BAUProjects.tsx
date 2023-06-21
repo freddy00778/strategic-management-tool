@@ -35,6 +35,9 @@ const defaultStructure: Record<
   startDate: "datepicker",
   endDate: "datepicker",
 };
+const characterLimits: Record<string, number> = {
+  content: 120,
+};
 const defaultBenefit: Benefit = {
   benefit: "Provide Details",
   startDate: "",
@@ -242,6 +245,8 @@ const BAUProjects: React.FC = () => {
             startDate: "End Date",
             endDate: "End Date",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
@@ -272,6 +277,8 @@ const BAUProjects: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <h1 className="text-2xl">Key Project Activities</h1>
@@ -303,6 +310,8 @@ const BAUProjects: React.FC = () => {
             startDate: "",
             endDate: "",
           }}
+          characterLimits={characterLimits}
+          width={60}
         />
       </div>
     </div>

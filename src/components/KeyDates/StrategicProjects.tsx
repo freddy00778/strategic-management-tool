@@ -246,6 +246,7 @@ const StrategicProjects: React.FC = () => {
             endDate: "",
           }}
           characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <div className="flex w-full items-center justify-between border-b py-2 border-border border-opacity-20">
@@ -277,6 +278,7 @@ const StrategicProjects: React.FC = () => {
             endDate: "",
           }}
           characterLimits={characterLimits}
+          width={60}
         />
       </div>
       <h1 className="text-2xl">Key Project Activities</h1>
@@ -309,6 +311,7 @@ const StrategicProjects: React.FC = () => {
             endDate: "",
           }}
           characterLimits={characterLimits}
+          width={60}
         />
       </div>
     </div>
