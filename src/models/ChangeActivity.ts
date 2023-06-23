@@ -7,8 +7,8 @@ export interface ChangeActivityProps {
 export type ActivityType = {
   id: number;
   title: string;
-  type: string;
-  typeValue: string;
+  type?: string;
+  typeValue?: string;
   data: ChartData;
 };
 export interface ChartData {

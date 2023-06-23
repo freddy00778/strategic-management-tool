@@ -1,9 +1,11 @@
 import { VictoryPie, VictoryLegend } from "victory";
 import { ChangeActivityData } from "../../data/ChangeActivityData";
-
+import StageOfCompletion from "./DashboardData/StageOfCompletion";
+import GearChange from "./DashboardData/GearChange";
+import BehaviorChangeInfo from "../BehaviorChangeInfo";
 const ExecutiveDashboard = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full space-y-12 overflow-y-auto max-h-[900px] scrollbar-thin scrollbar-track-slate-200">
       <div className="flex w-full">
         <div className="flex flex-wrap gap-20">
           {ChangeActivityData.map(({ id, topTitle, activity }) => (
@@ -12,7 +14,7 @@ const ExecutiveDashboard = () => {
               <div className="flex  w-full ">
                 <div className="flex w-full   ">
                   <div className="flex w-full space-x-6 ">
-                    {activity.map(({ id, title, data }) => {
+                    {activity.map(({ id, title, data, type, typeValue }) => {
                       const chartData = data.datasets[0].data.map(
                         (item, index) => ({
                           x: data.labels[index],
@@ -30,10 +32,14 @@ const ExecutiveDashboard = () => {
                       return (
                         <div
                           key={id}
-                          className="flex flex-col w-full px-4 py-4 rounded-xl shadow-md border border-border border-opacity-30"
+                          className="flex flex-col w-full px-6 py-6 rounded-xl shadow-md border border-border border-opacity-30"
                         >
                           <div className="border-b border-b-border px-2 py-2 flex items-center">
                             <h1>{title}</h1>
+                          </div>
+                          <div className="flex flex-col items-end mt-2">
+                            <p className=" text-xs">{type}</p>
+                            <span className="text-sm">{typeValue}</span>
                           </div>
                           <div className="flex w-full items-center">
                             <div className="flex w-full items-center">
@@ -43,11 +49,11 @@ const ExecutiveDashboard = () => {
                                 labels={() => ""} // hide labels
                               />
                             </div>
-                            <div className="mt-2 w-full">
+                            <div className=" w-full">
                               <VictoryLegend
                                 data={legendData}
                                 orientation="vertical"
-                                gutter={5}
+                                gutter={6}
                                 style={{ labels: { fontSize: 36 } }}
                               />
                             </div>
@@ -61,6 +67,18 @@ const ExecutiveDashboard = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <StageOfCompletion />
+      </div>
+      <div>
+        <StageOfCompletion />
+      </div>
+      <div>
+        <GearChange />
+      </div>
+      <div>
+        <BehaviorChangeInfo />
       </div>
     </div>
   );

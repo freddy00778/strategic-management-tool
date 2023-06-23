@@ -4,11 +4,14 @@ import avatar from "../../assets/images/avatar.jpg";
 import ManagerProjectsComponent from "../../components/Manager/ManagerProjectsComponent";
 import Button from "../../components/Button";
 import project from "../../assets/images/project.svg";
+import { useNavigate } from "react-router-dom";
 const ManagerProjects = () => {
+  const navigation = useNavigate();
   const [isProjectAdded, setIsProjectAdded] = useState(false);
 
   const handleRoute = () => {
     setIsProjectAdded(true);
+    navigation("/project/dashboard");
   };
 
   return (
@@ -30,7 +33,7 @@ const ManagerProjects = () => {
             variant="primary"
             size="lg"
             onClick={handleRoute}
-            className="rounded-lg w-[30%]"
+            className="rounded-lg w-[30%] bg-primary-500"
             type="button"
           >
             Add Project
