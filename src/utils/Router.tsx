@@ -52,6 +52,8 @@ import PriorityPage from "../components/keyChanges/PriorityPage";
 import PriorityForm from "../components/keyChanges/KeyChangeForms/PriorityForm";
 import BudgetForm from "../components/Budget/BudgetForm";
 import KeyDates from "../Pages/Project/KeyDates";
+import ManagerKeyDates from "../Pages/Manager/KeyDate";
+import ExecutiveKeyDate from "../Pages/Executive/ExecutiveKeyDate";
 export const router = createBrowserRouter([
   {
     path: "",
@@ -473,6 +475,10 @@ export const router = createBrowserRouter([
         path: "/manager/dashboard/projects",
         element: <ManagerProjects />,
       },
+      {
+        path: "/manager/dashboard/keydates",
+        element: <ManagerKeyDates />,
+      },
     ],
   },
   {
@@ -490,6 +496,10 @@ export const router = createBrowserRouter([
       {
         path: "/executive/dashboard/calendar",
         element: <Calendar />,
+      },
+      {
+        path: "/executive/dashboard/keydates",
+        element: <ExecutiveKeyDate />,
       },
     ],
   },

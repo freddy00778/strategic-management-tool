@@ -1,6 +1,7 @@
 import { NavLinksProps } from "../models/NavLinks";
 import home from "../assets/images/home.svg";
 import project from "../assets/images/project-info.svg";
+import date from "../assets/images/dates.svg";
 
 export const ManagerNavlinksData: NavLinksProps[] = [
   {
@@ -14,5 +15,11 @@ export const ManagerNavlinksData: NavLinksProps[] = [
     title: "Projects",
     image: project,
     route: "/manager/dashboard/projects",
+  },
+  {
+    id: "3",
+    title: "Key Dates",
+    image: date,
+    route: "/manager/dashboard/keydates",
   },
 ];
