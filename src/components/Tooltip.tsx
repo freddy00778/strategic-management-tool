@@ -12,7 +12,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   children,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const tooltipStyles = "bg-primary-500 text-white p-2 rounded ";
+  const tooltipStyles = "bg-gray-100 text-primary-500 p-2 rounded ";
 
   const getTooltipPositionStyles = () => {
     switch (position) {
