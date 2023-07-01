@@ -12,12 +12,12 @@ const Tooltip: React.FC<TooltipProps> = ({
   children,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const tooltipStyles = "bg-gray-800 text-white p-2 rounded";
+  const tooltipStyles = "bg-primary-500 text-white p-2 rounded ";
 
   const getTooltipPositionStyles = () => {
     switch (position) {
       case "top":
-        return "bottom-full left-1/2 transform -translate-x-1/2";
+        return "bottom-full left-full transform -translate-x-1/2";
       case "bottom":
         return "top-full left-1/2 transform -translate-x-1/2";
       case "left":
@@ -40,7 +40,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   return (
     <div className="relative inline-block">
       <div
-        className="inline-flex items-center justify-center cursor-pointer"
+        className="inline-flex items-center justify-center cursor-pointer z-50"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -48,7 +48,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       </div>
       {isHovered && (
         <div
-          className={`absolute z-50 ${getTooltipPositionStyles()} ${tooltipStyles}`}
+          className={`absolute z-50 ${getTooltipPositionStyles()} ${tooltipStyles} `}
         >
           {text}
         </div>

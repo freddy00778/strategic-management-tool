@@ -142,14 +142,14 @@ const CalendarContent: React.FC = () => {
         </div>
         <div className="h-[206.47px] justify-start items-start inline-flex">
           <div className="w-[144.14px] h-[206.47px] p-[9.35px] bg-white  border border-gray-200 flex-col justify-start items-start gap-[7.79px] inline-flex">
-            <div className="w-[125.44px] py-[3.12px] justify-start items-center gap-[14.02px] inline-flex">
-              <div className="w-[22.60px] h-[22.60px] p-[3.12px] bg-[#000] rounded-[38.96px] flex-col justify-center items-center gap-[6.23px] inline-flex">
-                <Tooltip text="Holiday" position="top">
+            <div className="w-[125.44px] py-[3.12px]  justify-start items-center gap-[14.02px] inline-flex">
+              <Tooltip text="Public Holiday" position="right">
+                <div className="w-[22.60px] h-[22.60px] p-[3.12px]  bg-[#000] rounded-[38.96px] flex-col justify-center items-center gap-[6.23px] inline-flex">
                   <h1 className="text-white text-[16.362163543701172px] font-medium">
                     1
                   </h1>
-                </Tooltip>
-              </div>
+                </div>
+              </Tooltip>
               <div className="grow shrink basis-0 h-[23.47px] p-[6.23px] bg-zinc-100 rounded justify-start items-center gap-[6.23px] flex">
                 <div className="text-black text-[9.349807739257812px] font-medium">
                   Company Closed
@@ -157,11 +157,13 @@ const CalendarContent: React.FC = () => {
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[4.67px] inline-flex">
-              <div className="px-[12.47px] py-[2.34px] bg-blue-900 rounded justify-start items-start gap-[7.79px] flex">
-                <div className="text-white text-[10.908108711242676px] font-medium">
-                  10
+              <Tooltip text="Strategic Projects">
+                <div className="px-[12.47px] py-[2.34px] bg-blue-900 rounded justify-start items-start gap-[7.79px] flex">
+                  <div className="text-white text-[10.908108711242676px] font-medium">
+                    10
+                  </div>
                 </div>
-              </div>
+              </Tooltip>
               <div className="px-[12.47px] py-[2.34px] bg-orange-700 rounded justify-start items-start gap-[7.79px] flex">
                 <div className="text-white text-[10.908108711242676px] font-medium">
                   15
