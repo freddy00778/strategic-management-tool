@@ -41,7 +41,6 @@
     "react-router-dom": "^6.11.2",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.2",
-    "react-tooltip": "^5.11.2",
     "recharts": "^2.6.2",
     "redux-persist": "^6.0.0",
     "sort-by": "^1.2.0",

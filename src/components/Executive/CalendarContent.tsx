@@ -3,6 +3,8 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import { enGB } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
+import Tooltip from "../Tooltip";
+
 registerLocale("enGB", enGB);
 
 import arrleft from "../../assets/images/arrow-left.svg";
@@ -142,9 +144,11 @@ const CalendarContent: React.FC = () => {
           <div className="w-[144.14px] h-[206.47px] p-[9.35px] bg-white  border border-gray-200 flex-col justify-start items-start gap-[7.79px] inline-flex">
             <div className="w-[125.44px] py-[3.12px] justify-start items-center gap-[14.02px] inline-flex">
               <div className="w-[22.60px] h-[22.60px] p-[3.12px] bg-[#000] rounded-[38.96px] flex-col justify-center items-center gap-[6.23px] inline-flex">
-                <h1 className="text-white text-[16.362163543701172px] font-medium">
-                  1
-                </h1>
+                <Tooltip text="Holiday" position="top">
+                  <h1 className="text-white text-[16.362163543701172px] font-medium">
+                    1
+                  </h1>
+                </Tooltip>
               </div>
               <div className="grow shrink basis-0 h-[23.47px] p-[6.23px] bg-zinc-100 rounded justify-start items-center gap-[6.23px] flex">
                 <div className="text-black text-[9.349807739257812px] font-medium">
