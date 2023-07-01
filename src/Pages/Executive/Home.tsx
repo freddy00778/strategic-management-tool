@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import avatar from "../../assets/images/avatar.jpg";
-
+import Filter from "../../components/Executive/Filter";
 import ExecutiveDashboard from "../../components/Executive/ExecutiveDashboard";
 
 const ExecutiveHome = () => {
@@ -12,10 +12,11 @@ const ExecutiveHome = () => {
         <h1>Welcome Back</h1>
       </Header>
       <div className="flex-grow overflow-hidden h-3/4 p-7 space-y-8">
-        <div className="flex w-full justify-between">
+        <div className="flex w-full items-center justify-between">
           <h1 className="text-primary-500 text-[18px]">
             OCM Executive Dashboard
           </h1>
+          <Filter />
           <div className="flex items-center space-x-4">
             <h1 className="text-[#000] font-semibold text-[18px]">
               Number of Projects

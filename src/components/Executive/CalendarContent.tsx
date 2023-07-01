@@ -1,25 +1,103 @@
-const CalendarContent = () => {
+import React, { useState } from "react";
+import DatePicker, { registerLocale } from "react-datepicker";
+import { enGB } from "date-fns/locale";
+import "react-datepicker/dist/react-datepicker.css";
+
+registerLocale("enGB", enGB);
+
+import arrleft from "../../assets/images/arrow-left.svg";
+import arrright from "../../assets/images/arrow-right.svg";
+import pBlue from "../../assets/images/polygon-blue.svg";
+import pOrange from "../../assets/images/polygon-orange.svg";
+import pVoilet from "../../assets/images/polygon-voilet.svg";
+import pGreen from "../../assets/images/p-green.svg";
+import pLightBlue from "../../assets/images/p-light-blue.svg";
+import pPink from "../../assets/images/p-pink.svg";
+import pRed from "../../assets/images/p-red.svg";
+import pTeal from "../../assets/images/p-teal.svg";
+import pYellow from "../../assets/images/p-yellow.svg";
+import tGreen from "../../assets/images/t-green.svg";
+import tPink from "../../assets/images/t-Pink.svg";
+import tLightBlue from "../../assets/images/t-light-blue.svg";
+import tRed from "../../assets/images/t-red.svg";
+import tTeal from "../../assets/images/t-teal.svg";
+import tYellow from "../../assets/images/t-yellow.svg";
+
+const CalendarContent: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [monthPickerOpen, setMonthPickerOpen] = useState(false);
+  const [yearPickerOpen, setYearPickerOpen] = useState(false);
+
+  const handleMonthClick = () => {
+    setMonthPickerOpen(!monthPickerOpen);
+  };
+
+  const handleYearClick = () => {
+    setYearPickerOpen(!yearPickerOpen);
+  };
+
+  const handlePrevClick = () => {
+    setSelectedDate((prevDate) => {
+      const newDate = new Date(prevDate.getTime());
+      newDate.setMonth(prevDate.getMonth() - 1);
+      return newDate;
+    });
+  };
+
+  const handleNextClick = () => {
+    setSelectedDate((prevDate) => {
+      const newDate = new Date(prevDate.getTime());
+      newDate.setMonth(prevDate.getMonth() + 1);
+      return newDate;
+    });
+  };
+
   return (
     <div className="w-[1010px] h-[773px] pr-[1px] justify-center items-center inline-flex">
       <div className="self-stretch shadow flex-col justify-start items-start inline-flex">
-        <div className="w-[1009px] justify-between items-start gap-[6.23px] inline-flex">
-          <div className="pr-[7.79px] pb-[24.93px] justify-start items-start gap-[7.79px] flex">
-            <div className="text-zinc-600 text-[18.699615478515625px] font-bold">
-              May, 2023
+        <div className="flex justify-between items-center py-4 w-full">
+          <div className="flex justify-start items-start gap-2">
+            <div
+              className="text-gray-600 text-lg font-bold cursor-pointer"
+              onClick={handleMonthClick}
+            >
+              {selectedDate.toLocaleString("default", { month: "long" })}
+              {monthPickerOpen && (
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date: Date) => setSelectedDate(date)}
+                  onCalendarClose={() => setMonthPickerOpen(false)}
+                  dateFormat="MMMM"
+                  showMonthYearPicker
+                  inline
+                  locale="enGB"
+                />
+              )}
+            </div>
+            <div
+              className="text-gray-600 text-lg font-bold cursor-pointer"
+              onClick={handleYearClick}
+            >
+              {selectedDate.getFullYear()}
+              {yearPickerOpen && (
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date: Date) => setSelectedDate(date)}
+                  onCalendarClose={() => setYearPickerOpen(false)}
+                  dateFormat="yyyy"
+                  showYearPicker
+                  inline
+                  locale="enGB"
+                />
+              )}
             </div>
           </div>
-          <div className="h-[31.17px] p-[6.23px] justify-between items-center gap-[6.23px] flex">
-            <div className="w-[45.19px] h-[18.70px] justify-center items-start gap-[7.79px] flex">
-              <div className="grow shrink basis-0 self-stretch pl-[7.91px] pr-[4.63px] pt-[2.64px] pb-[0.24px] justify-center items-center inline-flex">
-                <div className="text-center text-neutral-800 text-[10.908108711242676px] font-normal leading-3">
-                  
-                </div>
-              </div>
-              <div className="grow shrink basis-0 self-stretch pl-[7.91px] pr-[4.63px] pt-[2.64px] pb-[0.24px] justify-center items-center inline-flex">
-                <div className="text-center text-neutral-800 text-[10.908108711242676px] font-normal leading-3">
-                  
-                </div>
-              </div>
+          <div className="flex justify-between items-center gap-2">
+            <div className="cursor-pointer" onClick={handlePrevClick}>
+              <img src={arrleft} alt="Previous" />
+            </div>
+            <div className="cursor-pointer" onClick={handleNextClick}>
+              <img src={arrright} alt="Next" />
             </div>
           </div>
         </div>
@@ -95,12 +173,21 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[4.67px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pBlue} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-indigo-500 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pOrange} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-orange-300 rounded-full" />
               </div>
               <div className="w-[37.40px] h-[17.92px] px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pVoilet} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-fuchsia-300 rounded-full" />
               </div>
             </div>
@@ -113,25 +200,61 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tGreen} alt="" />
+                </div>
+                <div>
+                  <img src={pGreen} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-green-600 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tRed} alt="" />
+                </div>
+                <div>
+                  <img src={pRed} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-red-500 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tTeal} alt="" />
+                </div>
+                <div>
+                  <img src={pTeal} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-teal-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tLightBlue} alt="" />
+                </div>
+                <div>
+                  <img src={pLightBlue} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-sky-400 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tPink} alt="" />
+                </div>
+                <div>
+                  <img src={pPink} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-pink-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tYellow} alt="" />
+                </div>
+                <div>
+                  <img src={pYellow} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-yellow-500 rounded-full" />
               </div>
             </div>
@@ -229,12 +352,21 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[4.67px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pBlue} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-indigo-500 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pOrange} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-orange-300 rounded-full" />
               </div>
               <div className="w-[37.40px] h-[17.92px] px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pVoilet} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-fuchsia-300 rounded-full" />
               </div>
             </div>
@@ -247,25 +379,61 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tGreen} alt="" />
+                </div>
+                <div>
+                  <img src={pGreen} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-green-600 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tRed} alt="" />
+                </div>
+                <div>
+                  <img src={pRed} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-red-500 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tTeal} alt="" />
+                </div>
+                <div>
+                  <img src={pTeal} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-teal-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tLightBlue} alt="" />
+                </div>
+                <div>
+                  <img src={pLightBlue} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-sky-400 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tPink} alt="" />
+                </div>
+                <div>
+                  <img src={pPink} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-pink-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tYellow} alt="" />
+                </div>
+                <div>
+                  <img src={pYellow} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-yellow-500 rounded-full" />
               </div>
             </div>
@@ -321,12 +489,23 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[4.67px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pBlue} alt="" />
+                </div>
+
                 <div className="w-[10.91px] h-[10.91px] bg-indigo-500 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pOrange} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-orange-300 rounded-full" />
               </div>
               <div className="w-[37.40px] h-[17.92px] px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={pVoilet} alt="" />
+                </div>
+
                 <div className="w-[10.91px] h-[10.91px] bg-fuchsia-300 rounded-full" />
               </div>
             </div>
@@ -339,25 +518,61 @@ const CalendarContent = () => {
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tGreen} alt="" />
+                </div>
+                <div>
+                  <img src={pGreen} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-green-600 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tRed} alt="" />
+                </div>
+                <div>
+                  <img src={pRed} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-red-500 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tTeal} alt="" />
+                </div>
+                <div>
+                  <img src={pTeal} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-teal-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tLightBlue} alt="" />
+                </div>
+                <div>
+                  <img src={pLightBlue} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-sky-400 rounded-full" />
               </div>
             </div>
             <div className="self-stretch p-[1.56px] justify-start items-center gap-[10.91px] inline-flex">
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tPink} alt="" />
+                </div>
+                <div>
+                  <img src={pPink} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-pink-400 rounded-full" />
               </div>
               <div className="px-[4.67px] py-[1.56px] justify-start items-center gap-[6.23px] flex">
+                <div>
+                  <img src={tYellow} alt="" />
+                </div>
+                <div>
+                  <img src={pYellow} alt="" />
+                </div>
                 <div className="w-[10.91px] h-[10.91px] bg-yellow-500 rounded-full" />
               </div>
             </div>
@@ -440,18 +655,6 @@ const CalendarContent = () => {
           <div className="w-[144.14px] self-stretch p-[9.35px] bg-white  border border-gray-200 flex-col justify-between items-start gap-[7.79px] inline-flex">
             <div className="text-neutral-400 text-[16.362163543701172px] font-medium">
               30
-            </div>
-            <div className="self-stretch h-[21.04px] p-[1.56px]" />
-          </div>
-          <div className="w-[144.14px] self-stretch p-[9.35px] bg-white  border border-gray-200 flex-col justify-between items-start gap-[7.79px] inline-flex">
-            <div className="text-neutral-400 text-[16.362163543701172px] font-medium">
-              31
-            </div>
-            <div className="self-stretch h-[21.04px] p-[1.56px]" />
-          </div>
-          <div className="w-[144.14px] self-stretch p-[9.35px] bg-white rounded-br-md  border border-gray-200 flex-col justify-between items-start gap-[7.79px] inline-flex">
-            <div className="text-neutral-400 text-[16.362163543701172px] font-medium">
-              32
             </div>
             <div className="self-stretch h-[21.04px] p-[1.56px]" />
           </div>

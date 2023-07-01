@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import avatar from "../../assets/images/avatar.jpg";
 import CalendarContent from "../../components/Executive/CalendarContent";
+import Filter from "../../components/Executive/Filter";
 
 const Calendar = () => {
   return (
@@ -8,6 +9,9 @@ const Calendar = () => {
       <Header backgroundImage={avatar} className="h-1/4">
         <h1 className=" text-primary-500">Calendar</h1>
       </Header>
+      <div className="flex items-center px-7 py-6 w-full justify-end">
+        <Filter />
+      </div>
       <div className="flex-grow overflow-hidden h-3/4 p-7 space-y-8">
         <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto scrollbar-none">
           <CalendarContent />
