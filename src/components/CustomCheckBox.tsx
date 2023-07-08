@@ -16,7 +16,7 @@ export const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
   onChange,
 }) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center cursor-pointer">
       <label htmlFor={id} className="relative flex items-center">
         <input
           id={id}
