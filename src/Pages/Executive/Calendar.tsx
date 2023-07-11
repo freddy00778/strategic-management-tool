@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import avatar from "../../assets/images/avatar.jpg";
 import CalendarContent from "../../components/Executive/CalendarContent";
 import Filter from "../../components/Executive/Filter";
+import CalendarComponent from "../../components/Executive/CalendarComponent";
 
 const Calendar = () => {
   return (
@@ -14,7 +15,8 @@ const Calendar = () => {
       </div>
       <div className="flex-grow overflow-hidden h-3/4 p-7 space-y-8">
         <div className="grid grid-rows-auto gap-y-10 h-full overflow-y-auto scrollbar-none">
-          <CalendarContent />
+          <CalendarComponent />
+          {/* <CalendarContent /> */}
           {/* You can add more components here and they will take up equal space and scroll if needed */}
         </div>
       </div>
