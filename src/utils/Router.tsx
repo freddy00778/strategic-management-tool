@@ -472,6 +472,10 @@ export const router = createBrowserRouter([
         element: <ManagerHome />,
       },
       {
+        path: "/manager/dashboard/calendar",
+        element: <Calendar />,
+      },
+      {
         path: "/manager/dashboard/projects",
         element: <ManagerProjects />,
       },
