@@ -8,64 +8,110 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { INITIAL_EVENTS, createEventId } from "./event-utlis";
-
+import CustomModal from "../CustomModal";
+import cancel from "../../assets/images/cancel.svg";
+import CustomChangeTable from "./CalendarTables/CustomChangeTable";
 interface DemoAppState {
   weekendsVisible?: boolean;
 }
 
-type Event = {
+export type Event = {
   id: string;
   title: string;
   start: string;
   end?: string;
   allDay?: boolean;
+  backgroundColor?: string;
+  textColor?: string;
+  border?: string;
 };
 
 const CalendarComponent: React.FC<DemoAppState> = ({
   weekendsVisible = true,
 }) => {
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [events, setEvents] = useState<Event[]>([
-    { id: "1", title: "Event 1", start: "2023-07-20" },
-    { id: "2", title: "Event 2", start: "2023-07-20" },
-    { id: "3", title: "Event 3", start: "2023-07-21" },
+    {
+      id: "1",
+      title: "Strategic Projects",
+      start: "2023-07-20",
+      backgroundColor: "#00009E",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "2",
+      title: "BAU Projects",
+      start: "2023-07-20",
+      backgroundColor: "#C84C00",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "3",
+      title: "Technical Change Projects",
+      start: "2023-07-20",
+      backgroundColor: "#840084",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "4",
+      title: "Strategic Project Milestone",
+      start: "2023-07-20",
+      backgroundColor: "#0000EE",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "5",
+      title: "Key Strategic Project Activity",
+      start: "2023-07-20",
+      backgroundColor: "#6565FF",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "6",
+      title: "BAU Project Milestone",
+      start: "2023-07-20",
+      backgroundColor: "#F45D00",
+      textColor: "#fff",
+      border: "transparent",
+    },
+    {
+      id: "7",
+      title: "Key BAU Project Activity",
+      start: "2023-07-20",
+      backgroundColor: "#FFA56D",
+      textColor: "#000",
+      border: "transparent",
+    },
+    {
+      id: "8",
+      title: "Public Holiday",
+      start: "2023-07-20",
+      backgroundColor: "#000",
+      textColor: "#fff",
+      border: "transparent",
+    },
   ]);
 
-  const handleDateSelect = (selectInfo: DateSelectArg) => {
-    const title = prompt("Please enter a new title for your event");
-    const calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      setEvents([
-        ...events,
-        {
-          id: createEventId(),
-          title,
-          start: selectInfo.startStr,
-          end: selectInfo.endStr,
-          allDay: selectInfo.allDay,
-        },
-      ]);
-    }
-  };
-
   const handleEventClick = (clickInfo: EventClickArg) => {
-    if (
-      confirm(
-        `Are you sure you want to delete the event '${clickInfo.event.title}'`
-      )
-    ) {
-      setEvents(events.filter((event) => event.id !== clickInfo.event.id));
-    }
+    setSelectedEvent({
+      id: clickInfo.event.id,
+      title: clickInfo.event.title,
+      start: clickInfo.event.startStr,
+      end: clickInfo.event.endStr,
+      allDay: clickInfo.event.allDay,
+    });
   };
 
   const renderEventContent = (eventContent: EventContentArg) => {
     return (
       <>
         <b>{eventContent.timeText}</b>
-        <i>{eventContent.event.title}</i>
+        <i className="text-[12px]">{eventContent.event.title}</i>
       </>
     );
   };
@@ -85,12 +131,16 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         selectMirror={true}
         dayMaxEvents={true}
         weekends={weekendsVisible}
-        initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-        select={handleDateSelect}
         eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}
         events={events} // render events from the state
       />
+      {selectedEvent && (
+        <CustomChangeTable
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+        />
+      )}
     </div>
   );
 };

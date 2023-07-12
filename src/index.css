@@ -93,3 +93,14 @@
     background-color: #f9f9f9;
   }
 }
+
+.fc-toolbar .fc-button {
+  @apply bg-transparent text-[#000] border-border;
+}
+
+.fc-toolbar .fc-button:focus {
+  @apply bg-primary-300 text-[#000] border-border;
+}
+.fc-toolbar .fc-button:hover {
+  @apply bg-primary-50 text-[#000] border-border cursor-pointer;
+}
