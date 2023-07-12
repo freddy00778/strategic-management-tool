@@ -110,7 +110,7 @@ const LessonModalForm: React.FC<LessonModalFormProps> = ({
             variant="primary"
             size="lg"
             onClick={handleSave}
-            className="rounded-lg w-[30%] mt-6"
+            className="rounded-lg w-[30%] mt-6 bg-primary-500"
             type="button"
           >
             Add lessons

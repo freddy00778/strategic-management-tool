@@ -106,7 +106,7 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
             <div className="flex flex-col w-2/4 h-full space-y-20">
               <InputField
                 id="email"
-                label="Date1"
+                label="Decision Date"
                 value={date1}
                 onChange={(e) => setDate1(e.target.value)}
                 type="datepicker"
@@ -225,7 +225,7 @@ const DecisionModalForm: React.FC<LessonModalFormProps> = ({
               variant="primary"
               size="lg"
               onClick={handleSave}
-              className="rounded-lg w-[30%] mt-6"
+              className="rounded-lg w-[30%] mt-6 bg-primary-500"
               type="button"
             >
               Add A Decision
