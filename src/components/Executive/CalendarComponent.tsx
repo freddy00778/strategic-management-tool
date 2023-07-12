@@ -37,11 +37,29 @@ const CalendarComponent: React.FC<DemoAppState> = ({
     });
   };
 
+  const handleEventMouseEnter = (mouseEnterInfo: EventClickArg) => {
+    const eventElement = mouseEnterInfo.el;
+    const eventName = mouseEnterInfo.event.title;
+    eventElement.setAttribute("title", eventName);
+  };
+
+  const handleEventMouseLeave = (mouseLeaveInfo: EventClickArg) => {
+    const eventElement = mouseLeaveInfo.el;
+    eventElement.removeAttribute("title");
+  };
+
   const renderEventContent = (eventContent: EventContentArg) => {
+    const MAX_TITLE_LENGTH = 20; // Maximum length of the event title
+
+    let truncatedTitle = eventContent.event.title;
+    if (truncatedTitle.length > MAX_TITLE_LENGTH) {
+      truncatedTitle = truncatedTitle.substring(0, MAX_TITLE_LENGTH) + "...";
+    }
+
     return (
       <>
         <b>{eventContent.timeText}</b>
-        <i className="text-[12px]">{eventContent.event.title}</i>
+        <i className="text-[12px]">{truncatedTitle}</i>
       </>
     );
   };
@@ -63,6 +81,8 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         weekends={weekendsVisible}
         eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}
+        eventMouseEnter={handleEventMouseEnter}
+        eventMouseLeave={handleEventMouseLeave}
         events={events} // render events from the state
       />
       {selectedEvent && (
