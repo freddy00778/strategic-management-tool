@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import {
-  DateSelectArg,
-  EventClickArg,
-  EventContentArg,
-} from "@fullcalendar/core";
+import { EventClickArg, EventContentArg } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import CustomModal from "../CustomModal";
-import cancel from "../../assets/images/cancel.svg";
 import CustomChangeTable from "./CalendarTables/CustomChangeTable";
+import { EventsData } from "../../data/EventsData";
 interface DemoAppState {
   weekendsVisible?: boolean;
 }
@@ -30,72 +25,7 @@ const CalendarComponent: React.FC<DemoAppState> = ({
   weekendsVisible = true,
 }) => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [events, setEvents] = useState<Event[]>([
-    {
-      id: "1",
-      title: "Strategic Projects",
-      start: "2023-07-20",
-      backgroundColor: "#00009E",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "2",
-      title: "BAU Projects",
-      start: "2023-07-20",
-      backgroundColor: "#C84C00",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "3",
-      title: "Technical Change Projects",
-      start: "2023-07-20",
-      backgroundColor: "#840084",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "4",
-      title: "Strategic Project Milestone",
-      start: "2023-07-20",
-      backgroundColor: "#0000EE",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "5",
-      title: "Key Strategic Project Activity",
-      start: "2023-07-20",
-      backgroundColor: "#6565FF",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "6",
-      title: "BAU Project Milestone",
-      start: "2023-07-20",
-      backgroundColor: "#F45D00",
-      textColor: "#fff",
-      border: "transparent",
-    },
-    {
-      id: "7",
-      title: "Key BAU Project Activity",
-      start: "2023-07-20",
-      backgroundColor: "#FFA56D",
-      textColor: "#000",
-      border: "transparent",
-    },
-    {
-      id: "8",
-      title: "Public Holiday",
-      start: "2023-07-20",
-      backgroundColor: "#000",
-      textColor: "#fff",
-      border: "transparent",
-    },
-  ]);
+  const [events, setEvents] = useState<Event[]>(EventsData);
 
   const handleEventClick = (clickInfo: EventClickArg) => {
     setSelectedEvent({
