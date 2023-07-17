@@ -1,49 +1,62 @@
 import { useState } from "react";
+import CustomModal, { ModalSize } from "./CustomModal";
+import InputField from "./InputField";
+import Button from "./Button";
 
 const AddButton = () => {
-  const [showInput, setShowInput] = useState(false);
+  const [category, setCategory] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     alert(`Reason added: ${inputValue}`);
     setInputValue("");
-    setShowInput(false);
+    setShowModal(false);
+  };
+
+  const handleButtonClick = (event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevents event from bubbling up to parent elements
+    setShowModal(true);
   };
 
   return (
     <div className="flex flex-col items-center">
-      {showInput && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
-          <div
-            className="absolute w-full h-full bg-black opacity-50"
-            onClick={() => setShowInput(false)}
-          ></div>
-          <form
-            onSubmit={handleSubmit}
-            className="p-6 bg-white z-60 relative rounded-md"
-          >
-            <input
-              value={inputValue}
-              onChange={(event) => setInputValue(event.target.value)}
-              placeholder="Enter reason..."
-              className="border rounded-md px-2 py-1 w-full"
-            />
-            <button
-              type="submit"
-              className="mt-4 py-2 px-6 bg-blue-500 text-white rounded-md"
+      <CustomModal
+        isOpen={showModal}
+        size={"md" as ModalSize} // size can be "sm", "md", "lg" or "full"
+        onClose={() => setShowModal(false)}
+      >
+        <form onSubmit={handleSubmit} className="space-y-20">
+          <InputField
+            id="user-name"
+            label="Reason"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            type="textarea"
+            className="w-full h-[200px] "
+            placeholder="Enter your reason"
+            characterLimit={120}
+          />
+          <div className="flex w-full h-full space-x-20  pb-10 items-end justify-end">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => setShowModal(false)}
+              className="rounded-lg w-[40%] bg-primary-500"
+              type="button"
             >
               Submit
-            </button>
-          </form>
-        </div>
-      )}
-      <button
-        className="border rounded-lg px-2 py-1"
-        onClick={() => setShowInput(true)}
+            </Button>
+          </div>
+        </form>
+      </CustomModal>
+      <div
+        className="border cursor-pointer rounded-lg px-2 py-1"
+        onClick={handleButtonClick}
       >
         +
-      </button>
+      </div>
       <span>Click to add</span>
     </div>
   );

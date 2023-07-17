@@ -86,7 +86,7 @@ const IssueNoteModalForm: React.FC<IssueNoteModalFormProps> = ({
         <div className="flex items-center w-full justify-between py-12 space-x-10">
           <InputDropdown
             id="dropdown"
-            header="Previous Risk Severity"
+            header="Previous Issue Severity"
             label={`${selectedOption}`}
             options={options}
             onOptionSelected={handleOptionSelected}
@@ -104,7 +104,7 @@ const IssueNoteModalForm: React.FC<IssueNoteModalFormProps> = ({
         <div className="flex items-center w-full justify-between py-12 space-x-10">
           <InputField
             id="email"
-            label="Risk Assessment Value"
+            label="Issue Assessment Value"
             value={assessment}
             onChange={(e) => setAssessment(e.target.value)}
             type="text"

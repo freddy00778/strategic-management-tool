@@ -30,6 +30,8 @@
     "@types/chart.js": "^2.9.37",
     "chart.js": "^4.3.0",
     "classnames": "^2.3.2",
+    "flowbite": "^1.7.0",
+    "flowbite-react": "^0.4.11",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "plotly.js": "^2.23.2",

@@ -254,12 +254,14 @@ const AddRiskModalForm: React.FC<AddKeyChangeFormProps> = ({
             }
           />
         </div>
+      </div>
+      <div>
         <RegisterNoteModal
           isOpen={secondModalOpen}
           onClose={() => setSecondModalOpen(false)}
           className=" absolute "
           cancel={cancel}
-          width={14}
+          width={12}
           assessment={assessment1}
           setAssessment={setAssessment1}
           dateLogged={dateLogged}

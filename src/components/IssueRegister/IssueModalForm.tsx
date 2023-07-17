@@ -221,6 +221,8 @@ const IssueModalForm: React.FC<IssueModalFormProps> = ({
             }
           />
         </div>
+      </div>
+      <div>
         <IssueNoteModal
           isOpen={secondModalOpen}
           onClose={() => setSecondModalOpen(false)}
