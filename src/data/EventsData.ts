@@ -8,6 +8,7 @@ export const EventsData: Event[] = [
     backgroundColor: "#00009E",
     textColor: "#fff",
     border: "transparent",
+    width: 10,
   },
   {
     id: "2",
@@ -98,9 +99,9 @@ export const EventsData: Event[] = [
     border: "transparent",
   },
   {
-    id: "13",
+    id: "23",
     title: "ASP Milestones",
-    start: "2023-08-29",
+    start: "2023-07-20",
     backgroundColor: "#00B000",
     textColor: "#fff",
     border: "transparent",
@@ -108,7 +109,7 @@ export const EventsData: Event[] = [
   {
     id: "14",
     title: "ASP Key Activities",
-    start: "2023-08-29",
+    start: "2023-07-20",
     backgroundColor: "#00E200",
     textColor: "#000",
     border: "transparent",
@@ -116,7 +117,7 @@ export const EventsData: Event[] = [
   {
     id: "15",
     title: "Shut Down",
-    start: "2023-08-11",
+    start: "2023-07-20",
     backgroundColor: "#249491",
     textColor: "#fff",
     border: "transparent",
@@ -124,7 +125,7 @@ export const EventsData: Event[] = [
   {
     id: "16",
     title: "SD Milestones",
-    start: "2023-08-11",
+    start: "2023-07-20",
     backgroundColor: "#28A4A1",
     textColor: "#fff",
     border: "transparent",

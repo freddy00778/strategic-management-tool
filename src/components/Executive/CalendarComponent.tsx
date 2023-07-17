@@ -6,6 +6,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import CustomChangeTable from "./CalendarTables/CustomChangeTable";
 import { EventsData } from "../../data/EventsData";
+import "./Calender.css";
 interface DemoAppState {
   weekendsVisible?: boolean;
 }
@@ -19,6 +20,7 @@ export type Event = {
   backgroundColor?: string;
   textColor?: string;
   border?: string;
+  width?: number;
 };
 
 const CalendarComponent: React.FC<DemoAppState> = ({
@@ -57,11 +59,11 @@ const CalendarComponent: React.FC<DemoAppState> = ({
     }
 
     return (
-      <>
-        <div className="event-number" title={truncatedTitle}>
+      <div className="event-container">
+        <div className="event-number" title={eventContent.event.title}>
           <i className="text-[12px]">{eventContent.event.id}</i>
         </div>
-      </>
+      </div>
     );
   };
 
