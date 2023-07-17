@@ -58,8 +58,9 @@ const CalendarComponent: React.FC<DemoAppState> = ({
 
     return (
       <>
-        <b>{eventContent.timeText}</b>
-        <i className="text-[12px]">{truncatedTitle}</i>
+        <div className="event-number" title={truncatedTitle}>
+          <i className="text-[12px]">{eventContent.event.id}</i>
+        </div>
       </>
     );
   };
@@ -77,7 +78,8 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         editable={true}
         selectable={true}
         selectMirror={true}
-        dayMaxEvents={true}
+        dayMaxEvents={20}
+        dayMaxEventRows={20}
         weekends={weekendsVisible}
         eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}

@@ -2,7 +2,7 @@ import { Event } from "../components/Executive/CalendarComponent";
 
 export const EventsData: Event[] = [
   {
-    id: "1",
+    id: "12",
     title: "Strategic Projects",
     start: "2023-07-03",
     backgroundColor: "#00009E",
@@ -20,7 +20,7 @@ export const EventsData: Event[] = [
   {
     id: "3",
     title: "Technical Change Projects",
-    start: "2023-07-24",
+    start: "2023-07-20",
     backgroundColor: "#840084",
     textColor: "#fff",
     border: "transparent",
@@ -28,7 +28,7 @@ export const EventsData: Event[] = [
   {
     id: "4",
     title: "Strategic Project Milestone",
-    start: "2023-07-03",
+    start: "2023-07-20",
     backgroundColor: "#0000EE",
     textColor: "#fff",
     border: "transparent",
@@ -36,7 +36,7 @@ export const EventsData: Event[] = [
   {
     id: "5",
     title: "Key Strategic Project Activity",
-    start: "2023-07-03",
+    start: "2023-07-20",
     backgroundColor: "#6565FF",
     textColor: "#fff",
     border: "transparent",
@@ -58,7 +58,7 @@ export const EventsData: Event[] = [
     border: "transparent",
   },
   {
-    id: "8",
+    id: "1",
     title: "Public Holiday",
     start: "2023-07-20",
     backgroundColor: "#000",
@@ -68,7 +68,7 @@ export const EventsData: Event[] = [
   {
     id: "9",
     title: "Project Milestone",
-    start: "2023-07-24",
+    start: "2023-07-20",
     backgroundColor: "#9900CC",
     textColor: "#fff",
     border: "transparent",
@@ -76,7 +76,7 @@ export const EventsData: Event[] = [
   {
     id: "10",
     title: "Key Project Activities",
-    start: "2023-07-24",
+    start: "2023-07-20",
     backgroundColor: "#E69FFF",
     textColor: "#fff",
     border: "transparent",
@@ -84,7 +84,7 @@ export const EventsData: Event[] = [
   {
     id: "11",
     title: "Annual Corporate Initiatives",
-    start: "2023-07-24",
+    start: "2023-07-20",
     backgroundColor: "#333F50",
     textColor: "#fff",
     border: "transparent",
@@ -92,7 +92,7 @@ export const EventsData: Event[] = [
   {
     id: "12",
     title: "Annual Strategic Planning",
-    start: "2023-08-29",
+    start: "2023-07-20",
     backgroundColor: "#0D880D",
     textColor: "#fff",
     border: "transparent",
