@@ -2,15 +2,7 @@ import InputField from "../../InputField";
 import { useState } from "react";
 import DisplayValuesComponent from "../../DisplayValuesComponent";
 import Button from "../../Button";
-import Technology from "./CheckLists/Technology";
-import Organisation from "./CheckLists/Organisation";
-import Governance from "./CheckLists/Governance";
-import Assets from "./CheckLists/Assets";
-import Process from "./CheckLists/Process";
-import Employees from "./CheckLists/Employees";
-import Customers from "./CheckLists/Customers";
-import Suppliers from "./CheckLists/Suppliers";
-import Training from "./CheckLists/Training";
+
 import DynamicFieldSet from "../../DynamicFieldSet";
 interface StakeholderFormProps {
   onChange?: (
@@ -18,9 +10,6 @@ interface StakeholderFormProps {
   ) => void;
 }
 interface Division {
-  text: string;
-}
-interface Department {
   text: string;
 }
 
@@ -43,9 +32,6 @@ const characterLimits: Record<string, number> = {
 const defaultDivision: Division = {
   text: "How the change adds value",
 };
-const defaultDepartment: Department = {
-  text: "How the change adds value",
-};
 
 const StakeholderForm: React.FC<StakeholderFormProps> = ({ onChange }) => {
   const [inputValue, setInputValue] = useState("");
@@ -55,10 +41,7 @@ const StakeholderForm: React.FC<StakeholderFormProps> = ({ onChange }) => {
   const [displayValues1, setDisplayValues1] = useState<string[]>([]);
   const [displayValues2, setDisplayValues2] = useState<string[]>([]);
   const [divisions, setDivisions] = useState<Division[]>([defaultDivision]);
-  const [division, setDivision] = useState("");
-  const [departments, setDepartments] = useState<Department[]>([
-    defaultDepartment,
-  ]);
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -113,11 +96,9 @@ const StakeholderForm: React.FC<StakeholderFormProps> = ({ onChange }) => {
   const addDivision = () => {
     setDivisions([...divisions, defaultDivision]);
   };
-  const addDepartment = () => {
-    setDepartments([...departments, defaultDepartment]);
-  };
+
   return (
-    <div className="flex flex-col w-full h-full overflow-y-auto max-h-[700px] scrollbar-thin scrollbar-thumb-zinc-200">
+    <div className="flex flex-col w-full h-full overflow-y-auto max-h-[300px] scrollbar-thin scrollbar-thumb-zinc-200">
       <div className="flex flex-col w-full px-10 py-10  space-y-16  ">
         <div className="w-full flex items-center border-b border-b-border py-0">
           <h1 className="text-[20px]">
@@ -175,48 +156,57 @@ const StakeholderForm: React.FC<StakeholderFormProps> = ({ onChange }) => {
           />
         </div>
       </div>
-      {/* <div className="px-10 py-6">
-        <InputField
-          id="email"
-          label="Division/Department/Unit"
-          value={division}
-          onChange={(e) => setDivision(e.target.value)}
-          type="text"
-          placeholder="Enter the department name"
-          required
-          className="w-2/4 m-0 "
-        />
-      </div> */}
-      <div className="flex flex-col w-full px-10 py-10  space-y-16  ">
+      <div className="flex flex-col w-full px-10 py-10  space-y-6  ">
         <div className="w-full flex items-center border-b border-b-border py-0">
-          <h1 className="text-[20px]">
-            Who is the Responsible Senior Stakeholder to manage benefit/make
-            decisions
-          </h1>
+          <h1 className="text-[20px]">Barriers /Obstacles</h1>
         </div>
-        <div className="flex flex-col w-full  ">
+        <div className="flex flex-col w-full">
           <InputField
             id="email"
-            label="(Who in business is responsible for this area/ ensuring that the benefit is realized/ has to
-approve the change?)"
-            value={inputValue}
-            onChange={handleInputChange}
-            onEnterPress={handleKeyPress}
+            label=""
+            value={inputValue1}
+            onChange={handleInputChange1}
+            onEnterPress={handleKeyPress1}
             type="textarea"
-            placeholder="Provide the necessary information"
+            placeholder="What barriers or obstacles do you foresee?"
             required
-            className="w-full h-[200px] "
+            className="w-full  "
             characterLimit={120}
           />
-          <div className="mt-20">
+          <div className="mt-4">
             <DisplayValuesComponent
-              displayValues={displayValues}
-              handleDeleteValue={handleDeleteValue}
+              displayValues={displayValues1}
+              handleDeleteValue={handleDeleteValue1}
             />
           </div>
         </div>
       </div>
-
+      <div className="flex flex-col w-full px-10 py-10  space-y-16  ">
+        <div className="w-full flex items-center border-b border-b-border py-0">
+          <h1 className="text-[20px]">Levers</h1>
+        </div>
+        <div className="flex flex-col w-full  ">
+          <InputField
+            id="email"
+            label="(How does it contribute to i.e the strategy, improved financial performance, compliance,
+sustainability, effectiveness, efficiency, culture, values?)"
+            value={inputValue2}
+            onChange={handleInputChange2}
+            onEnterPress={handleKeyPress2}
+            type="textarea"
+            placeholder="Provide the necessary information"
+            required
+            className="w-full"
+            characterLimit={120}
+          />
+          <div className="mt-6">
+            <DisplayValuesComponent
+              displayValues={displayValues2}
+              handleDeleteValue={handleDeleteValue2}
+            />
+          </div>
+        </div>
+      </div>
       <div className="flex w-full h-full space-x-20 px-10  items-end justify-end">
         <Button
           variant="primary"

@@ -144,11 +144,11 @@ const KeyImpactForm: React.FC<KeyImpactFormProps> = ({ onChange }) => {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full px-10 py-10  space-y-6  ">
+      {/* <div className="flex flex-col w-full px-10 py-10  space-y-6  ">
         <div className="w-full flex items-center border-b border-b-border py-0">
           <h1 className="text-[20px]">Barriers /Obstacles</h1>
         </div>
-        <div className="flex flex-col w-full   ">
+        <div className="flex flex-col w-full">
           <InputField
             id="email"
             label=""
@@ -194,7 +194,7 @@ sustainability, effectiveness, efficiency, culture, values?)"
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="flex w-full h-full space-x-20 px-10  items-end justify-end">
         <Button
           variant="primary"
