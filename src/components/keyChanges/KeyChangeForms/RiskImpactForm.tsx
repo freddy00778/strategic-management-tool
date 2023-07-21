@@ -67,7 +67,7 @@ const RiskImpactForm: React.FC<RiskImpactFormProps> = ({ onChange }) => {
   return (
     <form
       action="submit"
-      className="flex flex-col w-full h-full px-10  overflow-y-auto max-h-[700px] scrollbar-thin scrollbar-thumb-zinc-200"
+      className="flex flex-col w-full h-full px-10  overflow-y-auto max-h-[300px] scrollbar-thin scrollbar-thumb-zinc-200"
     >
       <div className="flex items-center w-full justify-between">
         <h1 className="w-3/4">Select Key Change Risk</h1>
@@ -130,7 +130,7 @@ const RiskImpactForm: React.FC<RiskImpactFormProps> = ({ onChange }) => {
           </div>
         </div>
       </div>
-      <div className="flex w-full h-full space-x-20 px-10  items-end justify-end">
+      <div className="flex w-full h-full space-x-20   items-end justify-end">
         <Button
           variant="primary"
           size="lg"
