@@ -4,7 +4,7 @@ export const EventsData: Event[] = [
   {
     id: "12",
     title: "Strategic Projects",
-    start: "2023-07-03",
+    start: "2023-07-20",
     backgroundColor: "#00009E",
     textColor: "#fff",
     border: "transparent",
@@ -133,7 +133,7 @@ export const EventsData: Event[] = [
   {
     id: "17",
     title: "SD Key Activities",
-    start: "2023-08-11",
+    start: "2023-07-20",
     backgroundColor: "#2FC3BF",
     textColor: "#000",
     border: "transparent",
@@ -141,7 +141,7 @@ export const EventsData: Event[] = [
   {
     id: "18",
     title: "Performance Review",
-    start: "2023-08-14",
+    start: "2023-07-20",
     backgroundColor: "#008EC0",
     textColor: "#fff",
     border: "transparent",
@@ -149,7 +149,7 @@ export const EventsData: Event[] = [
   {
     id: "19",
     title: "PR Milestones",
-    start: "2023-08-14",
+    start: "2023-07-20",
     backgroundColor: "#00B0F0",
     textColor: "#fff",
     border: "transparent",
@@ -157,7 +157,7 @@ export const EventsData: Event[] = [
   {
     id: "20",
     title: "PR Key Activities",
-    start: "2023-08-14",
+    start: "2023-07-20",
     backgroundColor: "#4BD0FF",
     textColor: "#000",
     border: "transparent",
@@ -165,7 +165,7 @@ export const EventsData: Event[] = [
   {
     id: "21",
     title: "Regulatory Activities",
-    start: "2023-08-24",
+    start: "2023-07-20",
     backgroundColor: "#A62A7D",
     textColor: "#fff",
     border: "transparent",
@@ -173,7 +173,7 @@ export const EventsData: Event[] = [
   {
     id: "22",
     title: "RA Milestones",
-    start: "2023-08-24",
+    start: "2023-07-20",
     backgroundColor: "#CC3399",
     textColor: "#fff",
     border: "transparent",
@@ -181,7 +181,7 @@ export const EventsData: Event[] = [
   {
     id: "23",
     title: "RA Key Activities",
-    start: "2023-08-24",
+    start: "2023-07-20",
     backgroundColor: "#D965B2",
     textColor: "#fff",
     border: "transparent",
@@ -189,7 +189,7 @@ export const EventsData: Event[] = [
   {
     id: "24",
     title: "Others",
-    start: "2023-07-31",
+    start: "2023-07-20",
     backgroundColor: "#A87C00",
     textColor: "#fff",
     border: "transparent",
@@ -197,7 +197,7 @@ export const EventsData: Event[] = [
   {
     id: "25",
     title: "Milestones",
-    start: "2023-07-31",
+    start: "2023-07-20",
     backgroundColor: "#CC9900",
     textColor: "#fff",
     border: "transparent",
@@ -205,7 +205,7 @@ export const EventsData: Event[] = [
   {
     id: "26",
     title: "Key Activities",
-    start: "2023-07-31",
+    start: "2023-07-20",
     backgroundColor: "#FAB900",
     textColor: "#000",
     border: "transparent",
@@ -213,7 +213,7 @@ export const EventsData: Event[] = [
   {
     id: "27",
     title: "Annual Budgeting",
-    start: "2023-07-14",
+    start: "2023-07-20",
     backgroundColor: "#AC0000",
     textColor: "#fff",
     border: "transparent",
@@ -221,7 +221,7 @@ export const EventsData: Event[] = [
   {
     id: "28",
     title: "AB Milestones",
-    start: "2023-07-14",
+    start: "2023-07-20",
     backgroundColor: "#D60000",
     textColor: "#fff",
     border: "transparent",
@@ -229,7 +229,7 @@ export const EventsData: Event[] = [
   {
     id: "29",
     title: "AB Key Activities",
-    start: "2023-07-14",
+    start: "2023-07-20",
     backgroundColor: "#FF2D2D",
     textColor: "#fff",
     border: "transparent",
@@ -237,7 +237,7 @@ export const EventsData: Event[] = [
   {
     id: "Closed",
     title: "Company Closed",
-    start: "2023-07-14",
+    start: "2023-07-20",
     backgroundColor: "#F2F2F2",
     textColor: "#000",
     border: "transparent",
