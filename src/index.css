@@ -106,10 +106,20 @@
 }
 
 .fc-scroller {
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  -ms-overflow-style: none;
 }
 
 .fc-scroller::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari and Opera */
+  display: none;
 }
+
+.fc-daygrid-day-events {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+/* .fc-daygrid-day .fc-event {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+} */

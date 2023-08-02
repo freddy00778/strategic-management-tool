@@ -39,7 +39,7 @@ const ManagerProjects = () => {
             Add Project
           </Button>
         </div>
-        <div className="w-full flex flex-col py-12 px-2 h-screen overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-track-zinc-50">
+        <div className="w-full flex flex-col py-12 px-2 h-screen overflow-y-auto max-h-[400px] scrollbar-thin scrollbar-track-zinc-50">
           {isProjectAdded ? (
             <ManagerProjectsComponent />
           ) : (

@@ -51,7 +51,7 @@ const ExecutiveKeyDateComponent = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           type="text"
-          placeholder="Type Topic"
+          placeholder="Provide Details"
           className="w-full m-0"
         />
       </div>

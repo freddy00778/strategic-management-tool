@@ -21,6 +21,7 @@ export type Event = {
   textColor?: string;
   border?: string;
   width?: number;
+  extendedProps?: object;
 };
 
 const CalendarComponent: React.FC<DemoAppState> = ({
@@ -51,17 +52,13 @@ const CalendarComponent: React.FC<DemoAppState> = ({
   };
 
   const renderEventContent = (eventContent: EventContentArg) => {
-    const MAX_TITLE_LENGTH = 20; // Maximum length of the event title
-
-    let truncatedTitle = eventContent.event.title;
-    if (truncatedTitle.length > MAX_TITLE_LENGTH) {
-      truncatedTitle = truncatedTitle.substring(0, MAX_TITLE_LENGTH) + "...";
-    }
-
     return (
-      <div className="event-container">
-        <div className="event-number" title={eventContent.event.title}>
-          <i className="text-[12px]">{eventContent.event.id}</i>
+      <div className="bg-transparent flex flex-wrap gap-2 w-12">
+        <div
+          className="w-12 h-6  rounded-md flex items-center justify-center"
+          title={eventContent.event.title}
+        >
+          <i className="text-[10px]">{eventContent.event.id}</i>
         </div>
       </div>
     );
@@ -83,11 +80,11 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         dayMaxEvents={20}
         dayMaxEventRows={20}
         weekends={weekendsVisible}
-        eventContent={renderEventContent} // custom render function
+        eventContent={renderEventContent}
         eventClick={handleEventClick}
         eventMouseEnter={handleEventMouseEnter}
         eventMouseLeave={handleEventMouseLeave}
-        events={events} // render events from the state
+        events={events}
       />
       {selectedEvent && (
         <CustomChangeTable

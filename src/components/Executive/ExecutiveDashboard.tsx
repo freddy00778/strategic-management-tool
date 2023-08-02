@@ -3,6 +3,7 @@ import { ChangeActivityData } from "../../data/ChangeActivityData";
 import StageOfCompletion from "./DashboardData/StageOfCompletion";
 import GearChange from "./DashboardData/GearChange";
 import BehaviorChangeInfo from "../BehaviorChangeInfo";
+import RiskSummaryComponent from "./DashboardData/RiskSummary";
 const ExecutiveDashboard = () => {
   return (
     <div className="flex flex-col w-full space-y-12 overflow-y-auto max-h-[900px] scrollbar-thin scrollbar-track-slate-200">
@@ -76,6 +77,9 @@ const ExecutiveDashboard = () => {
       </div>
       <div>
         <GearChange />
+      </div>
+      <div>
+        <RiskSummaryComponent />
       </div>
       <div>
         <BehaviorChangeInfo />

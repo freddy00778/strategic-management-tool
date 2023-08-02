@@ -1,0 +1,4 @@
+/* Table.module.css */
+.striped-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
