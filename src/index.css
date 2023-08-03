@@ -114,13 +114,12 @@
 }
 
 .fc-daygrid-day-events {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 10px;
+  @apply flex flex-wrap gap-x-2 gap-y-4 rounded-lg items-center;
 }
 
-/* .fc-daygrid-day .fc-event {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-} */
+.fc-h-event {
+  border: none !important;
+}
+.fc-daygrid-day-frame {
+  @apply space-y-4 py-2;
+}
