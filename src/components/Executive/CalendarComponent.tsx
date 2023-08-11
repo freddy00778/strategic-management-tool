@@ -23,13 +23,15 @@ export type Event = {
   width?: number;
   extendedProps?: object;
   type?: string;
+  color?: string;
+  borderColor?: string;
 };
 
 const CalendarComponent: React.FC<DemoAppState> = ({
   weekendsVisible = true,
 }) => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [events, setEvents] = useState<Event[]>(EventsData);
+  const events = EventsData.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
   const handleEventClick = (clickInfo: EventClickArg) => {
     setSelectedEvent({
@@ -38,6 +40,7 @@ const CalendarComponent: React.FC<DemoAppState> = ({
       start: clickInfo.event.startStr,
       end: clickInfo.event.endStr,
       allDay: clickInfo.event.allDay,
+      color: clickInfo.event.borderColor,
     });
   };
 
@@ -89,7 +92,7 @@ const CalendarComponent: React.FC<DemoAppState> = ({
             className="w-12 h-6 rounded-full flex items-center justify-center"
             title={eventContent.event.title}
           >
-            <i className="text-[10px]">{eventContent.event.id}</i>
+            <i className="text-[10px]">{eventContent.event.borderColor}</i>
           </div>
         </div>
       );
@@ -117,6 +120,7 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         eventMouseEnter={handleEventMouseEnter}
         eventMouseLeave={handleEventMouseLeave}
         events={events}
+        eventOrder="id"
       />
       {selectedEvent && (
         <CustomChangeTable
