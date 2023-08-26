@@ -109,16 +109,6 @@ export const EventsData: Event[] = [
   },
   {
     id: "13",
-    title: "Annual Strategic Planning Key Activities",
-    start: "2023-08-11",
-    backgroundColor: "transparent",
-    textColor: "#00E200",
-    border: "transparent",
-    type: "activity",
-    borderColor: "14",
-  },
-  {
-    id: "14",
     title: "Annual Strategic Planning Milestones",
     start: "2023-08-11",
     backgroundColor: "transparent",
@@ -127,6 +117,17 @@ export const EventsData: Event[] = [
     type: "milestone",
     borderColor: "23",
   },
+  {
+    id: "14",
+    title: "Annual Strategic Planning Key Activities",
+    start: "2023-08-11",
+    backgroundColor: "transparent",
+    textColor: "#00E200",
+    border: "transparent",
+    type: "activity",
+    borderColor: "14",
+  },
+
   {
     id: "15",
     title: "Shut Down",
