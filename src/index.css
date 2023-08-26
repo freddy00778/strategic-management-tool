@@ -135,3 +135,6 @@
 .fc-button-today-active {
   @apply bg-primary-50 !important;
 }
+.wide-event {
+  @apply w-36 items-center flex justify-center;
+}

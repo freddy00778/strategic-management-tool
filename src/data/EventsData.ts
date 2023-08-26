@@ -69,15 +69,6 @@ export const EventsData: Event[] = [
     borderColor: "7",
   },
   {
-    id: "8",
-    title: "Public Holiday",
-    start: "2023-08-11",
-    backgroundColor: "#000",
-    textColor: "#fff",
-    border: "transparent",
-    borderColor: "Holiday",
-  },
-  {
     id: "9",
     title: "Project Milestone",
     start: "2023-08-11",
@@ -294,5 +285,14 @@ export const EventsData: Event[] = [
     textColor: "#000",
     border: "transparent",
     borderColor: "Closed",
+  },
+  {
+    id: "31",
+    title: "Public Holiday",
+    start: "2023-08-11",
+    backgroundColor: "#000",
+    textColor: "#fff",
+    border: "transparent",
+    borderColor: "Holiday",
   },
 ];

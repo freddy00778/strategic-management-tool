@@ -25,13 +25,24 @@ export type Event = {
   type?: string;
   color?: string;
   borderColor?: string;
+  priority?: number;
 };
 
 const CalendarComponent: React.FC<DemoAppState> = ({
   weekendsVisible = true,
 }) => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const events = EventsData.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+  const events = EventsData.sort((a, b) => {
+    const aId = parseInt(a.id, 10);
+    const bId = parseInt(b.id, 10);
+
+    if (isNaN(aId) || isNaN(bId)) {
+      console.warn(`Invalid id encountered. aId: ${a.id}, bId: ${b.id}`);
+      return 0;
+    }
+
+    return aId - bId;
+  });
 
   const handleEventClick = (clickInfo: EventClickArg) => {
     setSelectedEvent({
@@ -87,7 +98,7 @@ const CalendarComponent: React.FC<DemoAppState> = ({
       );
     } else {
       return (
-        <div className="bg-transparent flex flex-wrap gap-2 w-12">
+        <div className="bg-transparent flex flex-wrap gap-2 w-10">
           <div
             className="w-12 h-6 rounded-full flex items-center justify-center"
             title={eventContent.event.title}
@@ -120,7 +131,13 @@ const CalendarComponent: React.FC<DemoAppState> = ({
         eventMouseEnter={handleEventMouseEnter}
         eventMouseLeave={handleEventMouseLeave}
         events={events}
-        eventOrder="id"
+        eventOrder="priority"
+        eventClassNames={(eventInfo) => {
+          if (eventInfo.event.id === "11") {
+            return ["wide-event"];
+          }
+          return [];
+        }}
       />
       {selectedEvent && (
         <CustomChangeTable
